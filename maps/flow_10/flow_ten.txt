@@ -1,0 +1,535 @@
+[1;33m final solution : [0m
+[1;32mroom is :Gws0
+[0m[1;32mroom is :Kfp4
+[0m[1;32mroom is :Smi3
+[0m[1;32mroom is :Fxa0
+[0m[1;32mroom is :Q_z1
+[0m[1;32mroom is :E_v6
+[0m[1;32mroom is :Dbl4
+[0m[1;32mroom is :Hfs8
+[0m[1;32mroom is :Ikc1
+[0m[1;32mroom is :Qwa1
+[0m[1;32mroom is :D_g9
+[0m[1;32mroom is :Hog6
+[0m[1;32mroom is :Bqt8
+[0m[1;32mroom is :Nm_9
+[0m[1;32mroom is :Hea1
+[0m[1;32mroom is :Hi_5
+[0m[1;32mroom is :Xar9
+[0m[1;32mroom is :Y_r2
+[0m[1;32mroom is :S_c6
+[0m[1;32mroom is :Tsz9
+[0m[1;32mroom is :Bgf3
+[0m[1;32mroom is :Ins3
+[0m[1;32mroom is :Ogy0
+[0m[1;32mroom is :Yhx5
+[0m[1;32mroom is :Qrz6
+[0m[1;32mroom is :Dnf0
+[0m[1;32mroom is :Dwc8
+[0m[1;32mroom is :Rqf6
+[0m[1;32mroom is :H_o2
+[0m[1;32mroom is :Uw_1
+[0m[1;32mroom is :Zqk8
+[0m[1;32mroom is :Dxn7
+[0m[1;32mroom is :Bls4
+[0m[1;32mroom is :Qvx2
+[0m[1;32mroom is :J_f4
+[0m[1;32mroom is :Jsv1
+[0m[1;32mroom is :Ifw2
+[0m[1;32mroom is :Rup9
+[0m[1;32mroom is :Vyj1
+[0m[1;32mroom is :Ejb4
+[0m[1;32mroom is :Fit9
+[0m[1;32mroom is :Bn_4
+[0m[1;32mroom is :Dra4
+[0m[1;32mroom is :Eio7
+[0m[1;32mroom is :Uk_2
+[0m[1;32mroom is :Xuh2
+[0m[1;32mroom is :Nd_2
+[0m[1;32mroom is :Ofu8
+[0m[1;32mroom is :Adg9
+[0m[1;32mroom is :V_f6
+[0m[1;32mroom is :Vt_9
+[0m[1;32mroom is :Zsx7
+[0m[1;32mroom is :Eww9
+[0m[1;32mroom is :Kmu4
+[0m[1;32mroom is :Xcg8
+[0m[1;32mroom is :Muc1
+[0m[1;32mroom is :Irr9
+[0m[1;32mroom is :Foy5
+[0m[1;32mroom is :Uqo2
+[0m[1;32mroom is :Vuo0
+[0m[1;32mroom is :Ty_8
+[0m[1;32mroom is :F_q7
+[0m[1;32mroom is :R_h3
+[0m[1;32mroom is :Hxm9
+[0m[1;32mroom is :Qpn9
+[0m[1;32mroom is :Kzz9
+[0m[1;32mroom is :Kby9
+[0m[1;32mroom is :Rx_2
+[0m[1;32mroom is :Dqh9
+[0m[1;32mroom is :Rni2
+[0m[1;33m final solution : [0m
+[1;32mroom is :Gws0
+[0m[1;32mroom is :Jp_4
+[0m[1;32mroom is :Ols0
+[0m[1;32mroom is :Dru5
+[0m[1;32mroom is :Jlg4
+[0m[1;32mroom is :Wys4
+[0m[1;32mroom is :Zgo7
+[0m[1;32mroom is :Fpk1
+[0m[1;32mroom is :Ks_9
+[0m[1;32mroom is :V_z4
+[0m[1;32mroom is :Pqm9
+[0m[1;32mroom is :Hbp8
+[0m[1;32mroom is :Kem5
+[0m[1;32mroom is :Ymu9
+[0m[1;32mroom is :Mno3
+[0m[1;32mroom is :Bkc0
+[0m[1;32mroom is :Agv2
+[0m[1;32mroom is :Dr_1
+[0m[1;32mroom is :X__1
+[0m[1;32mroom is :Ans8
+[0m[1;32mroom is :Yqv5
+[0m[1;32mroom is :Rpk8
+[0m[1;32mroom is :Fsd6
+[0m[1;32mroom is :Fkx0
+[0m[1;32mroom is :Afm5
+[0m[1;32mroom is :Xsu5
+[0m[1;32mroom is :Hcf5
+[0m[1;32mroom is :Mqp2
+[0m[1;32mroom is :Rmw0
+[0m[1;32mroom is :Zmn4
+[0m[1;32mroom is :Oqw1
+[0m[1;32mroom is :Ih_2
+[0m[1;32mroom is :Nez1
+[0m[1;32mroom is :Nkg1
+[0m[1;32mroom is :Izm0
+[0m[1;32mroom is :Rni2
+[0m[1;33m final solution : [0m
+[1;32mroom is :Gws0
+[0m[1;32mroom is :Ctt6
+[0m[1;32mroom is :Rcg7
+[0m[1;32mroom is :Ntd0
+[0m[1;32mroom is :W_p2
+[0m[1;32mroom is :Dv_0
+[0m[1;32mroom is :Wlj0
+[0m[1;32mroom is :Qb_7
+[0m[1;32mroom is :Rla6
+[0m[1;32mroom is :Rop6
+[0m[1;32mroom is :E_f4
+[0m[1;32mroom is :Qei4
+[0m[1;32mroom is :Bwz5
+[0m[1;32mroom is :Iju4
+[0m[1;32mroom is :Xw_1
+[0m[1;32mroom is :Syz4
+[0m[1;32mroom is :Wrd4
+[0m[1;32mroom is :Uhq7
+[0m[1;32mroom is :Aba6
+[0m[1;32mroom is :Gt_0
+[0m[1;32mroom is :Jpv7
+[0m[1;32mroom is :Wuk7
+[0m[1;32mroom is :Aea4
+[0m[1;32mroom is :Vc_4
+[0m[1;32mroom is :Ewe7
+[0m[1;32mroom is :Wmd5
+[0m[1;32mroom is :Mjy3
+[0m[1;32mroom is :Bvp9
+[0m[1;32mroom is :Dot2
+[0m[1;32mroom is :Rni2
+[0m[1;33m final solution : [0m
+[1;32mroom is :Gws0
+[0m[1;32mroom is :Ykj2
+[0m[1;32mroom is :Nd_9
+[0m[1;32mroom is :G_q7
+[0m[1;32mroom is :Jdb4
+[0m[1;32mroom is :Sih9
+[0m[1;32mroom is :Ncx5
+[0m[1;32mroom is :Hfm7
+[0m[1;32mroom is :X_s2
+[0m[1;32mroom is :Vcx6
+[0m[1;32mroom is :Cb_9
+[0m[1;32mroom is :Ffn4
+[0m[1;32mroom is :Dgz4
+[0m[1;32mroom is :Cht3
+[0m[1;32mroom is :Grp0
+[0m[1;32mroom is :Adv1
+[0m[1;32mroom is :Yvv5
+[0m[1;32mroom is :Vft4
+[0m[1;32mroom is :Fca6
+[0m[1;32mroom is :Ghs7
+[0m[1;32mroom is :K_j2
+[0m[1;32mroom is :Egp1
+[0m[1;32mroom is :Ojv5
+[0m[1;32mroom is :Hkk1
+[0m[1;32mroom is :Eno3
+[0m[1;32mroom is :Uqw8
+[0m[1;32mroom is :Ve_6
+[0m[1;32mroom is :Kuf0
+[0m[1;32mroom is :Xa_8
+[0m[1;32mroom is :Wl_6
+[0m[1;32mroom is :Eih9
+[0m[1;32mroom is :X_a1
+[0m[1;32mroom is :Eqf3
+[0m[1;32mroom is :Rni2
+[0m[1;33m final solution : [0m
+[1;32mroom is :Gws0
+[0m[1;32mroom is :Wmf6
+[0m[1;32mroom is :Ipj3
+[0m[1;32mroom is :Alq7
+[0m[1;32mroom is :Dfw5
+[0m[1;32mroom is :Rpf0
+[0m[1;32mroom is :Akt3
+[0m[1;32mroom is :Ohl5
+[0m[1;32mroom is :Grb5
+[0m[1;32mroom is :Dee3
+[0m[1;32mroom is :Tfw2
+[0m[1;32mroom is :I_y8
+[0m[1;32mroom is :Guh7
+[0m[1;32mroom is :Qz_6
+[0m[1;32mroom is :Cpq2
+[0m[1;32mroom is :Njl6
+[0m[1;32mroom is :Qgi7
+[0m[1;32mroom is :Bfo3
+[0m[1;32mroom is :Qux4
+[0m[1;32mroom is :Oev4
+[0m[1;32mroom is :Dgy4
+[0m[1;32mroom is :Jhv7
+[0m[1;32mroom is :Zom9
+[0m[1;32mroom is :Nlx5
+[0m[1;32mroom is :Zpi4
+[0m[1;32mroom is :Hrp2
+[0m[1;32mroom is :Bld2
+[0m[1;32mroom is :Ftw3
+[0m[1;32mroom is :Ktl6
+[0m[1;32mroom is :Nae9
+[0m[1;32mroom is :Rni2
+[0m[1;33m final solution : [0m
+[1;32mroom is :Gws0
+[0m[1;32mroom is :A_t9
+[0m[1;32mroom is :Ps_7
+[0m[1;32mroom is :Drv0
+[0m[1;32mroom is :Sm_4
+[0m[1;32mroom is :Hsn9
+[0m[1;32mroom is :Elj0
+[0m[1;32mroom is :Ntn1
+[0m[1;32mroom is :Fwq1
+[0m[1;32mroom is :Gcp9
+[0m[1;32mroom is :Z_w4
+[0m[1;32mroom is :Bkz3
+[0m[1;32mroom is :Cat5
+[0m[1;32mroom is :Ehq3
+[0m[1;32mroom is :Ed_0
+[0m[1;32mroom is :Zbs5
+[0m[1;32mroom is :Iy_1
+[0m[1;32mroom is :Xzy5
+[0m[1;32mroom is :Z_m3
+[0m[1;32mroom is :Eqy9
+[0m[1;32mroom is :Cwd1
+[0m[1;32mroom is :Zkq1
+[0m[1;32mroom is :Xgk5
+[0m[1;32mroom is :Xbh2
+[0m[1;32mroom is :Nwg0
+[0m[1;32mroom is :C_t3
+[0m[1;32mroom is :Hg_0
+[0m[1;32mroom is :Pjk9
+[0m[1;32mroom is :D_s1
+[0m[1;32mroom is :Ckj1
+[0m[1;32mroom is :Icn8
+[0m[1;32mroom is :Bih0
+[0m[1;32mroom is :Psu6
+[0m[1;32mroom is :Kcf6
+[0m[1;32mroom is :Jd_5
+[0m[1;32mroom is :Rni2
+[0m[1;33m final solution : [0m
+[1;32mroom is :Gws0
+[0m[1;32mroom is :Vwo8
+[0m[1;32mroom is :Fvu1
+[0m[1;32mroom is :Iie2
+[0m[1;32mroom is :Vkp3
+[0m[1;32mroom is :U_d8
+[0m[1;32mroom is :Fuz5
+[0m[1;32mroom is :Ita0
+[0m[1;32mroom is :Vpo3
+[0m[1;32mroom is :O__4
+[0m[1;32mroom is :Uen5
+[0m[1;32mroom is :Kwx4
+[0m[1;32mroom is :Tcb2
+[0m[1;32mroom is :Kg_4
+[0m[1;32mroom is :Vaa7
+[0m[1;32mroom is :Vnt2
+[0m[1;32mroom is :Euk9
+[0m[1;32mroom is :I_p9
+[0m[1;32mroom is :Oyj6
+[0m[1;32mroom is :Nrp2
+[0m[1;32mroom is :Hcz0
+[0m[1;32mroom is :Vqf8
+[0m[1;32mroom is :Fvn4
+[0m[1;32mroom is :Wpp7
+[0m[1;32mroom is :Ujr7
+[0m[1;32mroom is :Mph6
+[0m[1;32mroom is :Fky4
+[0m[1;32mroom is :Ueh3
+[0m[1;32mroom is :Fwl2
+[0m[1;32mroom is :Bch8
+[0m[1;32mroom is :Igt8
+[0m[1;32mroom is :Kbj8
+[0m[1;32mroom is :Tic4
+[0m[1;32mroom is :Dht7
+[0m[1;32mroom is :Doa6
+[0m[1;32mroom is :Rni2
+[0m[1;33m final solution : [0m
+[1;32mroom is :Gws0
+[0m[1;32mroom is :Kvl5
+[0m[1;32mroom is :Icd5
+[0m[1;32mroom is :Ihh2
+[0m[1;32mroom is :Vfb4
+[0m[1;32mroom is :Phf6
+[0m[1;32mroom is :X_l0
+[0m[1;32mroom is :P__4
+[0m[1;32mroom is :Jxt4
+[0m[1;32mroom is :E_c0
+[0m[1;32mroom is :Yue5
+[0m[1;32mroom is :Hck1
+[0m[1;32mroom is :Huh9
+[0m[1;32mroom is :R__4
+[0m[1;32mroom is :Qar1
+[0m[1;32mroom is :Sq_6
+[0m[1;32mroom is :Q_w3
+[0m[1;32mroom is :Phj1
+[0m[1;32mroom is :Ypo0
+[0m[1;32mroom is :Gem5
+[0m[1;32mroom is :Eyg6
+[0m[1;32mroom is :Noo8
+[0m[1;32mroom is :Kwj1
+[0m[1;32mroom is :Uto8
+[0m[1;32mroom is :Qfh9
+[0m[1;32mroom is :Fph5
+[0m[1;32mroom is :Wht8
+[0m[1;32mroom is :Ahg3
+[0m[1;32mroom is :Puf9
+[0m[1;32mroom is :Tdf7
+[0m[1;32mroom is :Xul5
+[0m[1;32mroom is :Obb1
+[0m[1;32mroom is :Yf_9
+[0m[1;32mroom is :Rni2
+[0m[1;33m final solution : [0m
+[1;32mroom is :Gws0
+[0m[1;32mroom is :P_c1
+[0m[1;32mroom is :Yne6
+[0m[1;32mroom is :Dkn5
+[0m[1;32mroom is :Xdl8
+[0m[1;32mroom is :Q_p9
+[0m[1;32mroom is :R_f1
+[0m[1;32mroom is :Eo_4
+[0m[1;32mroom is :Jjc3
+[0m[1;32mroom is :Wb_4
+[0m[1;32mroom is :Zur7
+[0m[1;32mroom is :Eps1
+[0m[1;32mroom is :Qd_0
+[0m[1;32mroom is :Ufs0
+[0m[1;32mroom is :Ras4
+[0m[1;32mroom is :Scz7
+[0m[1;32mroom is :Vxz0
+[0m[1;32mroom is :Iuc3
+[0m[1;32mroom is :Pbu3
+[0m[1;32mroom is :Jnh3
+[0m[1;32mroom is :N_o5
+[0m[1;32mroom is :Wsg3
+[0m[1;32mroom is :Xyn9
+[0m[1;32mroom is :Kgj1
+[0m[1;32mroom is :Nho9
+[0m[1;32mroom is :Aal9
+[0m[1;32mroom is :Boq9
+[0m[1;32mroom is :Pvz3
+[0m[1;32mroom is :Dxc8
+[0m[1;32mroom is :Rni2
+[0m[1;33m final solution : [0m
+[1;32mroom is :Gws0
+[0m[1;32mroom is :Ppo8
+[0m[1;32mroom is :Pe_0
+[0m[1;32mroom is :Kwp1
+[0m[1;32mroom is :Zov0
+[0m[1;32mroom is :B_c9
+[0m[1;32mroom is :Uye5
+[0m[1;32mroom is :Xnw5
+[0m[1;32mroom is :Vxj8
+[0m[1;32mroom is :Ixy7
+[0m[1;32mroom is :Otv4
+[0m[1;32mroom is :Nbj4
+[0m[1;32mroom is :Pkv1
+[0m[1;32mroom is :Hka4
+[0m[1;32mroom is :Qn_4
+[0m[1;32mroom is :Xxq8
+[0m[1;32mroom is :Zdb4
+[0m[1;32mroom is :Ppp8
+[0m[1;32mroom is :Jvr8
+[0m[1;32mroom is :Xhy0
+[0m[1;32mroom is :Xl_2
+[0m[1;32mroom is :Bcq7
+[0m[1;32mroom is :Cid4
+[0m[1;32mroom is :Qj_3
+[0m[1;32mroom is :Oim6
+[0m[1;32mroom is :Jpb9
+[0m[1;32mroom is :Ogz6
+[0m[1;32mroom is :X_f5
+[0m[1;32mroom is :Zxh9
+[0m[1;32mroom is :Rni2
+[0m[1;33m final solution : [0m
+[1;32mroom is :Gws0
+[0m[1;32mroom is :Rxl6
+[0m[1;32mroom is :Ijg4
+[0m[1;32mroom is :Pem8
+[0m[1;32mroom is :W_p1
+[0m[1;32mroom is :Tfx8
+[0m[1;32mroom is :Ulf2
+[0m[1;32mroom is :Tvk9
+[0m[1;32mroom is :G_v3
+[0m[1;32mroom is :Wsu1
+[0m[1;32mroom is :Y__5
+[0m[1;32mroom is :Jpu3
+[0m[1;32mroom is :Buk2
+[0m[1;32mroom is :Yzz7
+[0m[1;32mroom is :Tnv3
+[0m[1;32mroom is :Ujb5
+[0m[1;32mroom is :E_i9
+[0m[1;32mroom is :Vpm9
+[0m[1;32mroom is :Dzf1
+[0m[1;32mroom is :Cgu0
+[0m[1;32mroom is :K__7
+[0m[1;32mroom is :Jxy4
+[0m[1;32mroom is :Est6
+[0m[1;32mroom is :Ffs4
+[0m[1;32mroom is :Ul_6
+[0m[1;32mroom is :Aee9
+[0m[1;32mroom is :Vse1
+[0m[1;32mroom is :Tez2
+[0m[1;32mroom is :Wd_6
+[0m[1;32mroom is :Rni2
+[0m[1;33m final solution : [0m
+[1;32mroom is :Gws0
+[0m[1;32mroom is :Dch4
+[0m[1;32mroom is :Gfr8
+[0m[1;32mroom is :Oye9
+[0m[1;32mroom is :Asz9
+[0m[1;32mroom is :Usm6
+[0m[1;32mroom is :Dfd2
+[0m[1;32mroom is :Acp0
+[0m[1;32mroom is :Rxf5
+[0m[1;32mroom is :Tcv4
+[0m[1;32mroom is :Nwr4
+[0m[1;32mroom is :Dyj0
+[0m[1;32mroom is :Z_v8
+[0m[1;32mroom is :Mxs1
+[0m[1;32mroom is :Gye9
+[0m[1;32mroom is :H_k0
+[0m[1;32mroom is :Qhg9
+[0m[1;32mroom is :Nom9
+[0m[1;32mroom is :F_a4
+[0m[1;32mroom is :Duq7
+[0m[1;32mroom is :Frw0
+[0m[1;32mroom is :Kfr1
+[0m[1;32mroom is :Mpg9
+[0m[1;32mroom is :X_r6
+[0m[1;32mroom is :Qaf6
+[0m[1;32mroom is :K_o8
+[0m[1;32mroom is :Xxi1
+[0m[1;32mroom is :Qlk5
+[0m[1;32mroom is :Iae7
+[0m[1;32mroom is :Rni2
+[0m[1;33m final solution : [0m
+[1;32mroom is :Gws0
+[0m[1;32mroom is :Nmg5
+[0m[1;32mroom is :Wya1
+[0m[1;32mroom is :Sas5
+[0m[1;32mroom is :Vci5
+[0m[1;32mroom is :Mvp9
+[0m[1;32mroom is :Hxs7
+[0m[1;32mroom is :Neg4
+[0m[1;32mroom is :Mnh6
+[0m[1;32mroom is :Jem0
+[0m[1;32mroom is :Iyj5
+[0m[1;32mroom is :Cgo0
+[0m[1;32mroom is :Ixn0
+[0m[1;32mroom is :Tyk6
+[0m[1;32mroom is :Ume9
+[0m[1;32mroom is :Ugx8
+[0m[1;32mroom is :Ure9
+[0m[1;32mroom is :Mtd2
+[0m[1;32mroom is :Fm_3
+[0m[1;32mroom is :Jag8
+[0m[1;32mroom is :Jyt9
+[0m[1;32mroom is :Gmy2
+[0m[1;32mroom is :Jpl9
+[0m[1;32mroom is :D_g6
+[0m[1;32mroom is :Mpp6
+[0m[1;32mroom is :Ytw8
+[0m[1;32mroom is :Dkt9
+[0m[1;32mroom is :Ul_5
+[0m[1;32mroom is :Ogv3
+[0m[1;32mroom is :Iom9
+[0m[1;32mroom is :Hcd8
+[0m[1;32mroom is :Pcj9
+[0m[1;32mroom is :Rni2
+[0m[1;31mTOTAL_LEN is : 447
+[0m[1;31mMAX_STEPS is : 33
+[0m[1;31mNB_PATHS is : 13
+[0m  [1;33mallpaths->len is : 69
+[0m[1;32mallpaths->nb_ants is : 0
+[0m  [1;33mallpaths->len is : 35
+[0m[1;32mallpaths->nb_ants is : 0
+[0m  [1;33mallpaths->len is : 29
+[0m[1;32mallpaths->nb_ants is : 5
+[0m  [1;33mallpaths->len is : 33
+[0m[1;32mallpaths->nb_ants is : 1
+[0m  [1;33mallpaths->len is : 30
+[0m[1;32mallpaths->nb_ants is : 4
+[0m  [1;33mallpaths->len is : 35
+[0m[1;32mallpaths->nb_ants is : 0
+[0m  [1;33mallpaths->len is : 35
+[0m[1;32mallpaths->nb_ants is : 0
+[0m  [1;33mallpaths->len is : 33
+[0m[1;32mallpaths->nb_ants is : 1
+[0m  [1;33mallpaths->len is : 29
+[0m[1;32mallpaths->nb_ants is : 4
+[0m  [1;33mallpaths->len is : 29
+[0m[1;32mallpaths->nb_ants is : 0
+[0m  [1;33mallpaths->len is : 29
+[0m[1;32mallpaths->nb_ants is : 0
+[0m  [1;33mallpaths->len is : 29
+[0m[1;32mallpaths->nb_ants is : 0
+[0m  [1;33mallpaths->len is : 32
+[0m[1;32mallpaths->nb_ants is : 0
+[0mL1-Ctt6 L2-Ykj2 L3-Wmf6 L4-Kvl5 L5-P_c1
+L6-Ctt6 L1-Rcg7 L2-Nd_9 L7-Wmf6 L3-Ipj3 L4-Icd5 L8-P_c1 L5-Yne6
+L9-Ctt6 L6-Rcg7 L1-Ntd0 L2-G_q7 L10-Wmf6 L7-Ipj3 L3-Alq7 L4-Ihh2 L11-P_c1 L8-Yne6 L5-Dkn5
+L12-Ctt6 L9-Rcg7 L6-Ntd0 L1-W_p2 L2-Jdb4 L13-Wmf6 L10-Ipj3 L7-Alq7 L3-Dfw5 L4-Vfb4 L14-P_c1 L11-Yne6 L8-Dkn5 L5-Xdl8
+L15-Ctt6 L12-Rcg7 L9-Ntd0 L6-W_p2 L1-Dv_0 L2-Sih9 L13-Ipj3 L10-Alq7 L7-Dfw5 L3-Rpf0 L4-Phf6 L14-Yne6 L11-Dkn5 L8-Xdl8 L5-Q_p9
+L15-Rcg7 L12-Ntd0 L9-W_p2 L6-Dv_0 L1-Wlj0 L2-Ncx5 L13-Alq7 L10-Dfw5 L7-Rpf0 L3-Akt3 L4-X_l0 L14-Dkn5 L11-Xdl8 L8-Q_p9 L5-R_f1
+L15-Ntd0 L12-W_p2 L9-Dv_0 L6-Wlj0 L1-Qb_7 L2-Hfm7 L13-Dfw5 L10-Rpf0 L7-Akt3 L3-Ohl5 L4-P__4 L14-Xdl8 L11-Q_p9 L8-R_f1 L5-Eo_4
+L15-W_p2 L12-Dv_0 L9-Wlj0 L6-Qb_7 L1-Rla6 L2-X_s2 L13-Rpf0 L10-Akt3 L7-Ohl5 L3-Grb5 L4-Jxt4 L14-Q_p9 L11-R_f1 L8-Eo_4 L5-Jjc3
+L15-Dv_0 L12-Wlj0 L9-Qb_7 L6-Rla6 L1-Rop6 L2-Vcx6 L13-Akt3 L10-Ohl5 L7-Grb5 L3-Dee3 L4-E_c0 L14-R_f1 L11-Eo_4 L8-Jjc3 L5-Wb_4
+L15-Wlj0 L12-Qb_7 L9-Rla6 L6-Rop6 L1-E_f4 L2-Cb_9 L13-Ohl5 L10-Grb5 L7-Dee3 L3-Tfw2 L4-Yue5 L14-Eo_4 L11-Jjc3 L8-Wb_4 L5-Zur7
+L15-Qb_7 L12-Rla6 L9-Rop6 L6-E_f4 L1-Qei4 L2-Ffn4 L13-Grb5 L10-Dee3 L7-Tfw2 L3-I_y8 L4-Hck1 L14-Jjc3 L11-Wb_4 L8-Zur7 L5-Eps1
+L15-Rla6 L12-Rop6 L9-E_f4 L6-Qei4 L1-Bwz5 L2-Dgz4 L13-Dee3 L10-Tfw2 L7-I_y8 L3-Guh7 L4-Huh9 L14-Wb_4 L11-Zur7 L8-Eps1 L5-Qd_0
+L15-Rop6 L12-E_f4 L9-Qei4 L6-Bwz5 L1-Iju4 L2-Cht3 L13-Tfw2 L10-I_y8 L7-Guh7 L3-Qz_6 L4-R__4 L14-Zur7 L11-Eps1 L8-Qd_0 L5-Ufs0
+L15-E_f4 L12-Qei4 L9-Bwz5 L6-Iju4 L1-Xw_1 L2-Grp0 L13-I_y8 L10-Guh7 L7-Qz_6 L3-Cpq2 L4-Qar1 L14-Eps1 L11-Qd_0 L8-Ufs0 L5-Ras4
+L15-Qei4 L12-Bwz5 L9-Iju4 L6-Xw_1 L1-Syz4 L2-Adv1 L13-Guh7 L10-Qz_6 L7-Cpq2 L3-Njl6 L4-Sq_6 L14-Qd_0 L11-Ufs0 L8-Ras4 L5-Scz7
+L15-Bwz5 L12-Iju4 L9-Xw_1 L6-Syz4 L1-Wrd4 L2-Yvv5 L13-Qz_6 L10-Cpq2 L7-Njl6 L3-Qgi7 L4-Q_w3 L14-Ufs0 L11-Ras4 L8-Scz7 L5-Vxz0
+L15-Iju4 L12-Xw_1 L9-Syz4 L6-Wrd4 L1-Uhq7 L2-Vft4 L13-Cpq2 L10-Njl6 L7-Qgi7 L3-Bfo3 L4-Phj1 L14-Ras4 L11-Scz7 L8-Vxz0 L5-Iuc3
+L15-Xw_1 L12-Syz4 L9-Wrd4 L6-Uhq7 L1-Aba6 L2-Fca6 L13-Njl6 L10-Qgi7 L7-Bfo3 L3-Qux4 L4-Ypo0 L14-Scz7 L11-Vxz0 L8-Iuc3 L5-Pbu3
+L15-Syz4 L12-Wrd4 L9-Uhq7 L6-Aba6 L1-Gt_0 L2-Ghs7 L13-Qgi7 L10-Bfo3 L7-Qux4 L3-Oev4 L4-Gem5 L14-Vxz0 L11-Iuc3 L8-Pbu3 L5-Jnh3
+L15-Wrd4 L12-Uhq7 L9-Aba6 L6-Gt_0 L1-Jpv7 L2-K_j2 L13-Bfo3 L10-Qux4 L7-Oev4 L3-Dgy4 L4-Eyg6 L14-Iuc3 L11-Pbu3 L8-Jnh3 L5-N_o5
+L15-Uhq7 L12-Aba6 L9-Gt_0 L6-Jpv7 L1-Wuk7 L2-Egp1 L13-Qux4 L10-Oev4 L7-Dgy4 L3-Jhv7 L4-Noo8 L14-Pbu3 L11-Jnh3 L8-N_o5 L5-Wsg3
+L15-Aba6 L12-Gt_0 L9-Jpv7 L6-Wuk7 L1-Aea4 L2-Ojv5 L13-Oev4 L10-Dgy4 L7-Jhv7 L3-Zom9 L4-Kwj1 L14-Jnh3 L11-N_o5 L8-Wsg3 L5-Xyn9
+L15-Gt_0 L12-Jpv7 L9-Wuk7 L6-Aea4 L1-Vc_4 L2-Hkk1 L13-Dgy4 L10-Jhv7 L7-Zom9 L3-Nlx5 L4-Uto8 L14-N_o5 L11-Wsg3 L8-Xyn9 L5-Kgj1
+L15-Jpv7 L12-Wuk7 L9-Aea4 L6-Vc_4 L1-Ewe7 L2-Eno3 L13-Jhv7 L10-Zom9 L7-Nlx5 L3-Zpi4 L4-Qfh9 L14-Wsg3 L11-Xyn9 L8-Kgj1 L5-Nho9
+L15-Wuk7 L12-Aea4 L9-Vc_4 L6-Ewe7 L1-Wmd5 L2-Uqw8 L13-Zom9 L10-Nlx5 L7-Zpi4 L3-Hrp2 L4-Fph5 L14-Xyn9 L11-Kgj1 L8-Nho9 L5-Aal9
+L15-Aea4 L12-Vc_4 L9-Ewe7 L6-Wmd5 L1-Mjy3 L2-Ve_6 L13-Nlx5 L10-Zpi4 L7-Hrp2 L3-Bld2 L4-Wht8 L14-Kgj1 L11-Nho9 L8-Aal9 L5-Boq9
+L15-Vc_4 L12-Ewe7 L9-Wmd5 L6-Mjy3 L1-Bvp9 L2-Kuf0 L13-Zpi4 L10-Hrp2 L7-Bld2 L3-Ftw3 L4-Ahg3 L14-Nho9 L11-Aal9 L8-Boq9 L5-Pvz3
+L15-Ewe7 L12-Wmd5 L9-Mjy3 L6-Bvp9 L1-Dot2 L2-Xa_8 L13-Hrp2 L10-Bld2 L7-Ftw3 L3-Ktl6 L4-Puf9 L14-Aal9 L11-Boq9 L8-Pvz3 L5-Dxc8
+L15-Wmd5 L12-Mjy3 L9-Bvp9 L6-Dot2 L1-Rni2 L2-Wl_6 L13-Bld2 L10-Ftw3 L7-Ktl6 L3-Nae9 L4-Tdf7 L14-Boq9 L11-Pvz3 L8-Dxc8 L5-Rni2
+L15-Mjy3 L12-Bvp9 L9-Dot2 L6-Rni2 L2-Eih9 L13-Ftw3 L10-Ktl6 L7-Nae9 L3-Rni2 L4-Xul5 L14-Pvz3 L11-Dxc8 L8-Rni2
+L15-Bvp9 L12-Dot2 L9-Rni2 L2-X_a1 L13-Ktl6 L10-Nae9 L7-Rni2 L4-Obb1 L14-Dxc8 L11-Rni2
+L15-Dot2 L12-Rni2 L2-Eqf3 L13-Nae9 L10-Rni2 L4-Yf_9 L14-Rni2
+L15-Rni2 L2-Rni2 L13-Rni2 L4-Rni2
