@@ -6,7 +6,7 @@
 /*   By: mjouffro <mjouffro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/09 01:06:18 by yabecret          #+#    #+#             */
-/*   Updated: 2019/10/14 17:10:36 by mjouffro         ###   ########.fr       */
+/*   Updated: 2019/10/15 15:36:55 by mjouffro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,7 +130,6 @@ void	enqueue_adjacent(t_lemin *lemin, t_links **queue, t_graph *room)
 			if (list->room->visited == false && lemin->matrix[iroom][iadjacent] == 0 && (!node_used_in_path(lemin, list->room)))
 			{
 				update_info_enqueue(queue, list, room);
-				//rint(list);
 				list->room->back = true;
 			}
 			list = list->next;

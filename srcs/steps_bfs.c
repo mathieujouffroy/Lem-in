@@ -6,7 +6,7 @@
 /*   By: mjouffro <mjouffro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/23 16:19:27 by mjouffro          #+#    #+#             */
-/*   Updated: 2019/10/14 18:12:06 by mjouffro         ###   ########.fr       */
+/*   Updated: 2019/10/15 13:43:18 by mjouffro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,12 @@ unsigned int			nbr_steps(t_lemin *lemin, t_allpaths *head, unsigned int max)
 
 	max_steps = lemin->max_steps;
 	tmp = head;
+
+	if (tmp->len == 0)
+	{
+		ft_printf("{red}ERROR: Inf Loop\n");
+		return (-1);
+	}
 /*
 	total = get_total(lemin, tmp);
 	if (total > lemin->nb_ants)

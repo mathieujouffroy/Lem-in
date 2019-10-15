@@ -6,11 +6,30 @@
 /*   By: mjouffro <mjouffro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 19:21:52 by yabecret          #+#    #+#             */
-/*   Updated: 2019/10/14 18:00:46 by mjouffro         ###   ########.fr       */
+/*   Updated: 2019/10/15 16:06:06 by mjouffro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
+
+int		sink_in_queue(t_lemin *lemin, t_links *queue)
+{
+	int i = 0;
+	int j = 0;
+
+	while (queue != NULL)
+	{
+		i++;
+		if (queue->room->name != lemin->end)
+			j++;
+		queue = queue->next;	
+	}
+	if (i == j)
+		return (0);
+	else
+		return (1);
+}
+
 
 int			bfs(t_lemin *lemin)
 {
@@ -18,6 +37,7 @@ int			bfs(t_lemin *lemin)
 	t_links			*new;
 	t_links 		*todelete;
 	int				cnt;
+	int				sink = 0;
 
 	cnt = 0;
 	queue = NULL;
@@ -30,10 +50,16 @@ int			bfs(t_lemin *lemin)
 	{
 		enqueue_adjacent(lemin, &queue, queue->room);
 		todelete = queue;
+		sink += sink_in_queue(lemin, queue);
 		queue = queue->next;
 		if (queue)
 			cnt++;
 		free(todelete);
+	}
+	if (sink == 0)
+	{
+		lemin->state &= ~S_END;
+		ft_printf("sink is not present in the queue\n");
 	}
 	if (lemin->container && lemin->container->len != 0)
 	{

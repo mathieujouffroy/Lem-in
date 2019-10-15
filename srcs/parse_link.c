@@ -6,7 +6,7 @@
 /*   By: mjouffro <mjouffro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:28:54 by yabecret          #+#    #+#             */
-/*   Updated: 2019/09/26 12:04:07 by mjouffro         ###   ########.fr       */
+/*   Updated: 2019/10/15 13:46:57 by mjouffro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,12 @@ int 	get_link(t_lemin *lemin, t_links **tmp, char *line)
 	rooms = ft_strsplit(line, '-');
 	h[0] = hashing((unsigned char*)rooms[0]);
 	h[1] = hashing((unsigned char*)rooms[1]);
+	
+	if (h[0] == lemin->hashstart || h[1] == lemin->hashstart)
+		lemin->state |= S_START;
+	if (h[0] == lemin->hashend || h[1] == lemin->hashend)
+		lemin->state |= S_END;
+
 	if (!(are_hash_valid(*tmp, h)))
 	{	
 		ft_printf("1 :%s\n", rooms[0]);

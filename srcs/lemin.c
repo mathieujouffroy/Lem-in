@@ -6,7 +6,7 @@
 /*   By: mjouffro <mjouffro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/26 17:10:06 by mjouffro          #+#    #+#             */
-/*   Updated: 2019/10/14 17:17:11 by mjouffro         ###   ########.fr       */
+/*   Updated: 2019/10/15 16:51:50 by mjouffro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,6 @@ int				main(void)
 	freelemin(&lemin);
 //	freeallpaths(&lemin.container);
 //	freeallpaths(&lemin.container1);
-	//while (1);
+//	while (1);
 	return (0);
 }

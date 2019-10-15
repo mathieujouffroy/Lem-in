@@ -6,7 +6,7 @@
 /*   By: mjouffro <mjouffro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/25 16:27:12 by yabecret          #+#    #+#             */
-/*   Updated: 2019/10/14 18:18:40 by mjouffro         ###   ########.fr       */
+/*   Updated: 2019/10/15 16:09:43 by mjouffro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,6 @@ void		delete_extra_node(t_lemin *lemin, t_allpaths *head)
 	t_allpaths	*nodebeforedel;
 	t_allpaths	*del;
 
-
 	del = head;
 	nodebeforedel =  head;
 	while (del->next != NULL)
@@ -138,18 +137,19 @@ int			ek(t_lemin *lemin)
 	lemin->container = lemin->debut;
 
 	lemin->max_steps = INT_MAX;
-	while (bfs(lemin) != 0 && tmp)
+	while (bfs(lemin) != 0 && tmp && (lemin->state & S_END))
 	{
 		backtrack(lemin);
 		tmp = nbr_steps(lemin, lemin->debut, max = 0);
+
+		if (tmp == -1)
+			return (FAILURE);
+			
 		tmp ? lemin->max_steps = tmp : lemin->max_steps;
 		// compare if max steps gets bigger get out
 		resetvisited(lemin);
 		if (!updatematrix(lemin))
-		{
-			ft_printf("no eeeend\n");
 			break ;
-		}
 	}
 	//tmp == 0 ? lemin->nb_pathsbfs-- : 0;
 	lemin->container = lemin->debut;

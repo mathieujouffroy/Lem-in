@@ -71,8 +71,11 @@ int		parsing(t_lemin *lemin)
 		}*/
 		ft_strdel(&line);
 	}
-	if (!(lemin->state & S_LINKS))
+	if (!(lemin->state & S_LINKS) || !(lemin->state & S_START) || !(lemin->state & S_END))
+	{
+		ft_printf("{red}ERROR: missing source or sink or no links between\n");
 		return (0);
+	}
 	return (1);
 }
 
