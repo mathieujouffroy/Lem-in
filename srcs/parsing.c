@@ -52,17 +52,23 @@ int		parsing(t_lemin *lemin)
 		else if (ft_strchr(line, '-') && (lemin->state & S_ROOMS))
 		{
 			if (!(lemin->start && lemin->end))
-				return (exit_with_message_room(line));
+				return (exit_with_message_links(line));
 			if (rooms_errors(lemin) && !(lemin->state & S_LINKS))
-				return (exit_with_message_room(line));
+				return (exit_with_message_links(line));
 			if (!get_link(lemin, &lemin->list, line))
 				return (exit_with_message_links(line));
 		}
-		else if (!(lemin->state & S_LINKS) && is_room(line) 
-			&& (lemin->nb_ants))
+		//else if (!(lemin->state & S_LINKS) && is_room(line) 
+		//	&& (lemin->nb_ants))
+		else if (!(lemin->state & S_LINKS) && (lemin->nb_ants))
 		{
-			if (!get_room(lemin, &lemin->list, line))
-				return (exit_with_message_room(line));
+			if (is_room(line))
+			{
+				if (!get_room(lemin, &lemin->list, line))
+					return (exit_with_message_room_duplicate(line));
+			}
+			else
+				return (exit_with_message_room(line));	
 		}
 		/*else
 		{
@@ -73,7 +79,7 @@ int		parsing(t_lemin *lemin)
 	}
 	if (!(lemin->state & S_LINKS) || !(lemin->state & S_START) || !(lemin->state & S_END))
 	{
-		ft_printf("{red}ERROR: missing source or sink or no links between\n");
+		ft_printf("{red}ERROR:{reset} not enough data : missing source, sink, links or ants\n");
 		return (0);
 	}
 	return (1);

@@ -165,6 +165,7 @@ unsigned long hashing(unsigned char *str);
 */
 
 int			rooms_errors(t_lemin *lemin);
+int		exit_with_message_room_duplicate(char *line);
 
 /*
 **                     BFS

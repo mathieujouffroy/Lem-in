@@ -9,7 +9,7 @@ int		is_room(char *line)
 	{
 		if (line[0] == ' ' || line[0] == 'L' || line[0] == '#')
 			return (FAILURE);
-		while ((line[i] >= 33) && (line[i] <= 126))
+		while ((line[i] >= 33) && (line[i] <= 126) && (line[i] != 45))
 			i++;
 		if (line[i] != ' ')
 			return (FAILURE);
@@ -67,10 +67,7 @@ int		get_room(t_lemin *lemin, t_links **tmp, char *line)
 	name = get_name(linetmp);
 	hash = hashing((unsigned char*)name);
 	if (is_hash_existing(*tmp, hash))
-	{
-		ft_printf("has does not exist\n");
 		return (FAILURE);
-	}
 	links = memalloc_links();
 	links->room = memalloc_graph();
 	links->room->name = name;
@@ -78,19 +75,6 @@ int		get_room(t_lemin *lemin, t_links **tmp, char *line)
 	links->room->visited = false;
 	links->room->index = lemin->cnt++;
 	room_start_or_end(lemin, links);
-/*	if (is_start(lemin))
-	{
-		lemin->start = links->room->name;
-		lemin->hashstart = links->room->hash;
-		lemin->head = links->room;
-	}
-	else if (is_end(lemin))
-	{
-		lemin->end = links->room->name;
-		lemin->hashend = links->room->hash;
-		lemin->sink = links->room;
-	}
-*/
 	addlinks(tmp, links);
 	add_line_to_str(lemin, line);
 	free(linetmp);
