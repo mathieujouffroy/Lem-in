@@ -6,7 +6,7 @@
 /*   By: yabecret <yabecret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 14:41:26 by yabecret          #+#    #+#             */
-/*   Updated: 2018/11/08 14:41:28 by yabecret         ###   ########.fr       */
+/*   Updated: 2019/10/16 12:29:42 by yabecret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ int	ft_atoi(const char *s)
 	res = 0;
 	while (s[i] && ft_isdigit(s[i]))
 	{
+		if (res > INT_MAX / 10 || ((res == INT_MAX / 10) && (s[i] - 48 > 8)) || res == INT_MIN)
+			return (0);	
 		res += s[i] - 48;
 		if (ft_isdigit(s[i + 1]))
 			res *= 10;

@@ -240,6 +240,7 @@ t_allpaths *sort_paths(t_allpaths *container);
 void		delete_extra_node(t_lemin *lemin, t_allpaths *head);
 
 int			exit_with_message_room(char *line);
-int		exit_with_message_links(char *line);
+int			exit_with_message_links(char *line);
+int			exit_with_message_coord_overflow(char *line);
 
 #endif

@@ -27,6 +27,7 @@ int		gnl_exit(char *line)
 int		parsing(t_lemin *lemin)
 {
 	char		*line;
+	int			ret;
 
 	line = NULL;
 	while (get_next_line(FD, &line) == 1)
@@ -49,7 +50,7 @@ int		parsing(t_lemin *lemin)
 			lemin->nb_ants = ft_atoi(line);
 			add_line_to_str(lemin, line);
 		}
-		else if (ft_strchr(line, '-') && (lemin->state & S_ROOMS))
+		else if (ft_strchr(line, '-') && (lemin->state & S_ROOMS) && !ft_strchr(line, ' '))
 		{
 			if (!(lemin->start && lemin->end))
 				return (exit_with_message_links(line));
@@ -64,8 +65,11 @@ int		parsing(t_lemin *lemin)
 		{
 			if (is_room(line))
 			{
-				if (!get_room(lemin, &lemin->list, line))
+				ret = get_room(lemin, &lemin->list, line);
+				if (ret == 0)
 					return (exit_with_message_room_duplicate(line));
+				else if (ret == -1)
+					return (exit_with_message_coord_overflow(line));
 			}
 			else
 				return (exit_with_message_room(line));	

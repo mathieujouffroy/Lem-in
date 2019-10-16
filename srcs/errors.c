@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mjouffro <mjouffro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yabecret <yabecret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 15:32:49 by yabecret          #+#    #+#             */
-/*   Updated: 2019/10/15 17:31:15 by mjouffro         ###   ########.fr       */
+/*   Updated: 2019/10/16 12:22:55 by yabecret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,12 @@ int		rooms_errors(t_lemin *lemin)
 int		exit_with_message_room(char *line)
 {
 	ft_printf("{red}ERROR:{reset} room format\n");
+	return (gnl_exit(line));
+}
+
+int		exit_with_message_coord_overflow(char *line)
+{
+	ft_printf("{red}ERROR:{reset} coord overflow\n");
 	return (gnl_exit(line));
 }
 
