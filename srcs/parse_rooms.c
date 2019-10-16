@@ -101,3 +101,20 @@ int		get_room(t_lemin *lemin, t_links **tmp, char *line)
 	!(lemin->state & S_ROOMS) ? (lemin->state |= S_ROOMS) : 0;
 	return (SUCCESS);
 }
+
+int		parse_room(t_lemin *lemin, char *line)
+{
+	int			ret;
+	
+	if (is_room(line))
+	{
+		ret = get_room(lemin, &lemin->list, line);
+		if (ret == 0)
+			return (exit_with_message_room_duplicate(line));
+		else if (ret == -1)
+			return (exit_with_message_coord_overflow(line));
+		return (1);
+	}
+	else
+		return (exit_with_message_room(line));	
+}

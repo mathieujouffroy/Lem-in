@@ -6,7 +6,7 @@
 /*   By: mjouffro <mjouffro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:28:54 by yabecret          #+#    #+#             */
-/*   Updated: 2019/10/15 13:46:57 by mjouffro         ###   ########.fr       */
+/*   Updated: 2019/10/16 16:41:35 by mjouffro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,15 @@ int 	get_link(t_lemin *lemin, t_links **tmp, char *line)
 	free(rooms);
 	add_line_to_str(lemin, line);
 	return (SUCCESS);
+}
+
+int		parse_links(t_lemin *lemin, char *line)
+{
+	if (!(lemin->start && lemin->end))
+		return (exit_with_message_links(line));
+	if (rooms_errors(lemin) && !(lemin->state & S_LINKS))
+		return (exit_with_message_links(line));
+	if (!get_link(lemin, &lemin->list, line))
+		return (exit_with_message_links(line));
+	return (1);
 }

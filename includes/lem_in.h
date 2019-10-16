@@ -89,16 +89,19 @@ typedef	struct			s_lemin
 **                     PARSING
 */
 
-int			start_end(char *line);
-int			parsing(t_lemin *lemin);
+void		add_line_and_delete(t_lemin *lemin, char *line);
+void		add_line_and_delete(t_lemin *lemin, char *line);
 int			gnl_exit(char *line);
+int			parsing(t_lemin *lemin);
 
 /*
-**                     PARSE ANTS
+**                 PARSE ANTS / COMMANDS
 */
 
 int			ft_str_is_digit(char *str);
-int			get_ants(t_lemin *lemin);
+int			start_end(char *line);
+void		get_ants(t_lemin *lemin, char *line);
+void		add_command_to_state(t_lemin *lemin, char *line);
 
 /*
 **                     PARSE ROOMS
@@ -147,6 +150,7 @@ int			**memalloc_matrix(int size);
 int freegraph(t_graph **graph);
 int freelinks(t_links **links);
 int freeallpaths(t_allpaths **allpaths);
+int			freedata(t_lemin *lemin);
 void freelemin(t_lemin *lemin);
 
 /*
@@ -242,5 +246,8 @@ void		delete_extra_node(t_lemin *lemin, t_allpaths *head);
 int			exit_with_message_room(char *line);
 int			exit_with_message_links(char *line);
 int			exit_with_message_coord_overflow(char *line);
+
+int			parse_room(t_lemin *lemin, char *line);
+int			parse_links(t_lemin *lemin, char *line);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: mjouffro <mjouffro@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/08 09:48:30 by yabecret          #+#    #+#              #
-#    Updated: 2019/10/14 18:05:49 by mjouffro         ###   ########.fr        #
+#    Updated: 2019/10/16 17:05:04 by mjouffro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ LDFLAGS		= -Llibft
 LDLIBS		= -lft
 
 SRC_NAME 	=		lemin.c								\
-					parse_ants.c						\
+					parse_ants_and_commands.c			\
 					parse_rooms.c						\
 					parse_link.c						\
 					parsing.c							\

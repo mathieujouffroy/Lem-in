@@ -6,7 +6,7 @@
 /*   By: mjouffro <mjouffro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/14 15:40:11 by yabecret          #+#    #+#             */
-/*   Updated: 2019/09/26 12:03:51 by mjouffro         ###   ########.fr       */
+/*   Updated: 2019/10/16 17:28:14 by mjouffro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,31 @@ int 		freeallpaths(t_allpaths **allpaths)
 	return (SUCCESS);
 }
 
-void 		freelemin(t_lemin *lemin)
+int			freedata(t_lemin *lemin)
 {
 	if (lemin->start)
 		ft_strdel(&lemin->start);
 	if (lemin->end)
 		ft_strdel(&lemin->end);
+	//if (lemin->nb_ants)
+		//ft_memdel((void**)&lemin->nb_ants);
+	if (lemin->head)
+		freegraph(&lemin->head);
+	if (lemin->sink)
+		freegraph(&lemin->sink);
 	if (lemin->list)
 		freelinks(&lemin->list);
+	return (SUCCESS);
+}
+
+void 		freelemin(t_lemin *lemin)
+{
+	/*if (lemin->start)
+		ft_strdel(&lemin->start);
+	if (lemin->end)
+		ft_strdel(&lemin->end);
+	if (lemin->list)
+		freelinks(&lemin->list);*/
 	//ft_printf("list done\n");
 	if (lemin->container)
 		freeallpaths(&lemin->container);

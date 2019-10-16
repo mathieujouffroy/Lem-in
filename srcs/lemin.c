@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lemin.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yabecret <yabecret@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mjouffro <mjouffro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/26 17:10:06 by mjouffro          #+#    #+#             */
-/*   Updated: 2019/10/16 12:06:30 by yabecret         ###   ########.fr       */
+/*   Updated: 2019/10/16 17:17:30 by mjouffro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,10 @@ int				main(void)
 
 	ft_bzero(&lemin, sizeof(lemin));
 	if (!(parsing(&lemin)))
+	{
+		freedata(&lemin);
 		return (FAILURE);
+	}
 	if (lemin.head == NULL)
 		return (FAILURE);
 	ek(&lemin);
