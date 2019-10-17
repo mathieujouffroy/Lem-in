@@ -113,7 +113,7 @@ int		parse_room(t_lemin *lemin, char *line)
 			return (exit_with_message_room_duplicate(line));
 		else if (ret == -1)
 			return (exit_with_message_coord_overflow(line));
-		return (1);
+		return (success_exit(line));
 	}
 	else
 		return (exit_with_message_room(line));	

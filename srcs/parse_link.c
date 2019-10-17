@@ -6,7 +6,7 @@
 /*   By: mjouffro <mjouffro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:28:54 by yabecret          #+#    #+#             */
-/*   Updated: 2019/10/16 16:41:35 by mjouffro         ###   ########.fr       */
+/*   Updated: 2019/10/17 12:03:08 by mjouffro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,5 +80,5 @@ int		parse_links(t_lemin *lemin, char *line)
 		return (exit_with_message_links(line));
 	if (!get_link(lemin, &lemin->list, line))
 		return (exit_with_message_links(line));
-	return (1);
+	return (success_exit(line));
 }

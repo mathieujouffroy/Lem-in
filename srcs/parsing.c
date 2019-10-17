@@ -6,6 +6,12 @@ int		gnl_exit(char *line)
 	return (0);
 }
 
+int		success_exit(char *line)
+{
+	ft_strdel(&line);
+	return (1);
+}
+
 void	add_line_and_delete(t_lemin *lemin, char *line)
 {
 	add_line_to_str(lemin, line);

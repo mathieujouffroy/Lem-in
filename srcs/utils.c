@@ -6,7 +6,7 @@
 /*   By: mjouffro <mjouffro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/26 15:45:00 by mjouffro          #+#    #+#             */
-/*   Updated: 2019/09/26 12:59:12 by mjouffro         ###   ########.fr       */
+/*   Updated: 2019/10/17 12:03:57 by mjouffro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	add_line_to_str(t_lemin *lemin, char *str)
 		lemin->map = ft_strdup(str);
 	else
 		lemin->map = ft_strjoin(lemin->map, str);
+	ft_strdel(&str);
 }
 
 void	addlinks(t_links **links, t_links *new)

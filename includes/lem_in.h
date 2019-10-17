@@ -92,6 +92,7 @@ typedef	struct			s_lemin
 void		add_line_and_delete(t_lemin *lemin, char *line);
 void		add_line_and_delete(t_lemin *lemin, char *line);
 int			gnl_exit(char *line);
+int			success_exit(char *line);
 int			parsing(t_lemin *lemin);
 
 /*
