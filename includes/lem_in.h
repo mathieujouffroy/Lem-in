@@ -11,11 +11,8 @@
 # define S_LINKS (1 << 1)
 # define S_START (1 << 2)
 # define S_END   (1 << 3)
-# define S_BACKWARD (1 << 4)
-
 # define S_R1 (1 << 0)
 # define S_R2 (1 << 1)
-
 # define S_FREE (1 << 4)
 
 
@@ -27,8 +24,6 @@ typedef struct			s_links
 
 typedef struct			s_graph
 {
-	long				x;
-	long 				y;
 	bool				visited;
 	bool				back;
 	char				*name;
@@ -36,8 +31,6 @@ typedef struct			s_graph
 	unsigned long		pred;
 	unsigned long		hash;
 	int					index;
-	int					weight;
-	int					used;
 	unsigned int		antid;
 	t_links				*links;
 }						t_graph;
@@ -150,7 +143,8 @@ int			**memalloc_matrix(int size);
 
 int freegraph(t_graph **graph);
 int freelinks(t_links **links);
-int freeallpaths(t_allpaths **allpaths);
+int	freelist(t_links *links, int i);
+int freeallpaths(t_allpaths *allpaths);
 int			freedata(t_lemin *lemin);
 void freelemin(t_lemin *lemin);
 

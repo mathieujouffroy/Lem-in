@@ -6,7 +6,7 @@
 /*   By: mjouffro <mjouffro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/25 16:27:12 by yabecret          #+#    #+#             */
-/*   Updated: 2019/10/15 16:09:43 by mjouffro         ###   ########.fr       */
+/*   Updated: 2019/10/17 14:45:09 by mjouffro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,6 @@ int			backtrack(t_lemin *lemin)
 
 	tracker = lemin->hashend;
 	cnt = 0;
-	//add backward to avoid useless calcul in maxsteps
-	if (lemin->state & S_BACKWARD)
-	{
-		lemin->state &= ~S_BACKWARD;
-		lemin->container->backward = 1;
-	}
 	while (1)
 	{
 		if (tracker == 0)
@@ -93,7 +87,7 @@ void		delete_extra_node(t_lemin *lemin, t_allpaths *head)
 		nodebeforedel->next = NULL;
 		lemin->nb_pathsbfs > 1 ? lemin->nb_pathsbfs-- : 0;
 		ft_printf("{green}---now lemin nb paths is %d---\n{reset}", lemin->nb_pathsbfs);
-		freelinks(&del->path);
+		//freelist(del->path);
 		ft_memdel((void**)del);
 	}
 }
@@ -115,7 +109,7 @@ void		delete_node(t_lemin *lemin, t_allpaths *head)
 	{
 		ft_printf("{yellow}---lemin nb paths is %d---\n{reset}", lemin->nb_pathsbfs);
 		nodebeforedel->next = NULL;
-		freelinks(&del->path);
+	//	freelist(del->path);
 		ft_memdel((void**)del);
 		ft_printf("{green}---now lemin nb paths is %d---\n{reset}", lemin->nb_pathsbfs);
 	}

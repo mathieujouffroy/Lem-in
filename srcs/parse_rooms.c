@@ -37,26 +37,26 @@ char	*get_name(char *line)
 {
 	int i;
 	char **rooms;
+	char *ret;
 
 	i = 0;
 	rooms = ft_strsplit(line, ' ');
-//	while (line[i] != ' ')
-//		i++;
-//	line[i] = '\0';
-//	return (ft_strdup(line));
-	ft_printf("{green}room 0 : %s\n{reset}", rooms[0]);
-	ft_printf("room 1 : %s\n", rooms[1]);
-	ft_printf("room 2 : %s\n", rooms[2]);
 	if ((!ft_atoi(rooms[1]) && ft_strcmp(rooms[1], "0")) 
 		|| (!ft_atoi(rooms[2]) && ft_strcmp(rooms[2], "0")))
 	{
-		free(rooms[1]);
-		free(rooms[2]);
+		ft_strdel(&rooms[1]);
+		ft_strdel(&rooms[2]);
+		ft_strdel(&rooms[0]);
+		free(rooms);
 		return (NULL);
 	}
-	free(rooms[1]);
-	free(rooms[2]);
-	return (rooms[0]);
+	//free(rooms[1]);
+	//free(rooms[2]);
+	ft_strdel(&rooms[1]);
+	ft_strdel(&rooms[2]);
+	ret = rooms[0];
+	free(rooms);
+	return (ret);
 }
 
 void	room_start_or_end(t_lemin *lemin, t_links *links)
@@ -84,7 +84,10 @@ int		get_room(t_lemin *lemin, t_links **tmp, char *line)
 
 	linetmp = ft_strdup(line);
 	if ((name = get_name(linetmp)) == NULL)
+	{
+		free(linetmp);
 		return (-1);
+	}
 	hash = hashing((unsigned char*)name);
 	if (is_hash_existing(*tmp, hash))
 		return (FAILURE);

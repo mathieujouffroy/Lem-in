@@ -6,7 +6,7 @@
 /*   By: mjouffro <mjouffro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/26 15:45:00 by mjouffro          #+#    #+#             */
-/*   Updated: 2019/10/17 12:03:57 by mjouffro         ###   ########.fr       */
+/*   Updated: 2019/10/17 17:02:31 by mjouffro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,15 @@
 
 void	add_line_to_str(t_lemin *lemin, char *str)
 {
+	char *tmp;
+
 	str = ft_strjoin(str, "\n");
+	tmp = lemin->map;
 	if (lemin->map == NULL)
 		lemin->map = ft_strdup(str);
 	else
-		lemin->map = ft_strjoin(lemin->map, str);
+		lemin->map = ft_strjoin(tmp, str);
+	free(tmp);
 	ft_strdel(&str);
 }
 
@@ -31,6 +35,11 @@ void	addlinks(t_links **links, t_links *new)
 
 void printall(t_links *tmp)
 {
+	if (!tmp)
+	{
+		ft_printf("not tmp\n");
+		return ;
+	}
 	while (tmp)
 	{
 		ft_printf("{red}head is :%s\n{reset}", tmp->room->name);
@@ -47,10 +56,13 @@ void printall(t_links *tmp)
 void print(t_links *head)
 {
 	if (!head)
+	{
+		ft_printf("not tmp\n");
 		return ;
+	}
 	while (head)
 	{
-		ft_printf("{green}room is :%s\n{reset}", head->room->name);
+		//ft_printf("{green}room is :%s\n{reset}", head->room->name);
 		head = head->next;
 	}
 }
@@ -97,3 +109,26 @@ unsigned long hashing(unsigned char *str)
 	return hash;
 }
 
+
+/*
+char	*create_tab(char *str)
+{
+	char	**new;
+	if (!(new = (char**)ft_memalloc(sizeof(char*) * 2)))
+		return (0);
+	new[0] = str;
+	return (new);
+}
+
+char	**ft_str_to_tab(char **tab, char *str)
+{
+	char	**new;
+	int		len;
+
+	if (!tab)
+		return (0);
+	// get len
+	// malloc new 
+	// memccpy
+	// 
+}*/
