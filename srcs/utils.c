@@ -6,7 +6,7 @@
 /*   By: mjouffro <mjouffro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/26 15:45:00 by mjouffro          #+#    #+#             */
-/*   Updated: 2019/10/17 17:02:31 by mjouffro         ###   ########.fr       */
+/*   Updated: 2019/10/21 13:35:57 by mjouffro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,16 @@ void print(t_links *head)
 		ft_printf("not tmp\n");
 		return ;
 	}
-	while (head)
+	while (head != NULL)
 	{
-		//ft_printf("{green}room is :%s\n{reset}", head->room->name);
+		ft_printf("in the loooooop\n");
+		head->room->name ? ft_printf("{green}room is :%s\n{reset}", head->room->name) : 0;
+		/*if (head->room->links)
+		{
+			ft_printf("room has links\n");
+			print(head->room->links);
+		}*/
+		
 		head = head->next;
 	}
 }
@@ -74,27 +81,30 @@ void printmatrix(int **matrix, int size)
 
 	x = 0;
 	ft_printf("   ");
-	while (x < size)
+	if (matrix != NULL)
 	{
-		ft_printf("{green}%d{reset}|", x);
-		x++;
-	}
-	x = 0;
-	ft_printf("\n");
-	while (x < size)
-	{
-		y = 0;
-		ft_printf("{green}%d{reset} |", x);
-		while (y < size)
+		while (x < size)
 		{
-			if (matrix[x][y] == 0)
-				ft_printf("%d|", matrix[x][y]);
-			else
-				ft_printf("{red}%d{reset}|", matrix[x][y]);
-			y++;
+			ft_printf("{green}%d{reset}|", x);
+			x++;
 		}
+		x = 0;
 		ft_printf("\n");
-		x++;
+		while (x < size)
+		{
+			y = 0;
+			ft_printf("{green}%d{reset} |", x);
+			while (y < size)
+			{
+				if (matrix[x][y] == 0)
+					ft_printf("%d|", matrix[x][y]);
+				else
+					ft_printf("{red}%d{reset}|", matrix[x][y]);
+				y++;
+			}
+			ft_printf("\n");
+			x++;
+		}
 	}
 }
 

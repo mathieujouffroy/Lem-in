@@ -206,7 +206,7 @@ int	ek(t_lemin *lemin);
 **                     backtrack
 */
 
-int		get_matrix_path(t_lemin *lemin, t_links *tmp);
+int		get_matrix_path(t_lemin *lemin); //, t_links *tmp);
 
 /*
 **                     sharing_ants

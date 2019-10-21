@@ -6,7 +6,7 @@
 /*   By: mjouffro <mjouffro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/04 12:08:13 by mjouffro          #+#    #+#             */
-/*   Updated: 2019/10/14 12:59:01 by mjouffro         ###   ########.fr       */
+/*   Updated: 2019/10/21 14:11:25 by mjouffro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 t_allpaths *final_solution(t_lemin *lemin)
 {
 	t_allpaths *tmp = NULL;
-	t_allpaths *tmp1 = NULL;
 
 	if (lemin->max_steps < lemin->max_steps1)
 	{
 		tmp = lemin->container;
 		lemin->nb_paths = lemin->nb_pathsbfs;
 		lemin->path_max_len = lemin->path_max_lenbfs;
+		//freeallpaths(lemin->container1);
 		ft_printf("max steps bfs is %d\n", lemin->max_steps);
 		ft_printf("{green}tmp is container{reset}\n");
 	}
@@ -31,17 +31,12 @@ t_allpaths *final_solution(t_lemin *lemin)
 		lemin->nb_paths = lemin->nb_pathsek;
 		lemin->max_steps = lemin->max_steps1;
 		lemin->path_max_len = lemin->path_max_lenek;
+		//freeallpaths(lemin->container);
+		//freeallpaths(lemin->container);
+		//lemin->container = NULL;
 		ft_printf("{green}tmp is container1{reset}\n");
 	}
 	ft_printf("========== nbpaths is : %u\n", lemin->nb_paths);
-	
-	tmp1 = tmp;
-	while (tmp1)
-	{
-		//ft_printf("{red}PATH IS\n{reset}");
-		//print(tmp1->path);
-		tmp1 = tmp1->next;
-	}
 	return (tmp);
 }
 
@@ -102,7 +97,6 @@ int		solve_lemin(t_lemin *lemin, unsigned int move)
 	t_allpaths *tmp;
 
 	head = final_solution(lemin);
-	//head = lemin->container;
 //	ft_printf("{yellow}path max len is %d\n{reset}", lemin->path_max_len);
 	ft_printf("{yellow}---------------------------\n\n{reset}");
 
@@ -122,6 +116,7 @@ int		solve_lemin(t_lemin *lemin, unsigned int move)
 		tmp = tmp->next;
 	}
 	tmp = head;
+	ft_printf("head name is %s:\n", head->path->room->name);
 	ft_printf("{red}--------lemin->maxsteps is %d---------\n{reset}", lemin->max_steps);
 	while (move <= lemin->max_steps)
 		move += move_and_display(lemin, head);

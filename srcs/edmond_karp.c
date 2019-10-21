@@ -6,7 +6,7 @@
 /*   By: mjouffro <mjouffro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/25 16:27:12 by yabecret          #+#    #+#             */
-/*   Updated: 2019/10/17 14:45:09 by mjouffro         ###   ########.fr       */
+/*   Updated: 2019/10/21 16:28:42 by mjouffro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ t_links		*find_hash_node(t_links *list, unsigned long hash)
 
 	new = memalloc_links();
 	tmp = list;
+	//new = tmp;
 	while (tmp)
 	{
 		if (tmp->room && tmp->room->hash == hash)
@@ -29,6 +30,7 @@ t_links		*find_hash_node(t_links *list, unsigned long hash)
 		}
 		tmp = tmp->next;
 	}
+	ft_printf("\n\nBLAaAAAAAAAAAAAAAAAAAA\n\n");
 	return (new);
 }
 
@@ -87,7 +89,7 @@ void		delete_extra_node(t_lemin *lemin, t_allpaths *head)
 		nodebeforedel->next = NULL;
 		lemin->nb_pathsbfs > 1 ? lemin->nb_pathsbfs-- : 0;
 		ft_printf("{green}---now lemin nb paths is %d---\n{reset}", lemin->nb_pathsbfs);
-		//freelist(del->path);
+		freeallpaths(del);
 		ft_memdel((void**)del);
 	}
 }
@@ -110,6 +112,7 @@ void		delete_node(t_lemin *lemin, t_allpaths *head)
 		ft_printf("{yellow}---lemin nb paths is %d---\n{reset}", lemin->nb_pathsbfs);
 		nodebeforedel->next = NULL;
 	//	freelist(del->path);
+		freeallpaths(del);
 		ft_memdel((void**)del);
 		ft_printf("{green}---now lemin nb paths is %d---\n{reset}", lemin->nb_pathsbfs);
 	}
@@ -119,34 +122,33 @@ int			ek(t_lemin *lemin)
 {
 	int				tmp;
 	unsigned int	max;
-	t_allpaths		*tmp2;
-	t_allpaths		*tmp3;
+	t_allpaths		*tmp1;
 
 	tmp = 1;
 	lemin->matrix = memalloc_matrix(lemin->cnt);
 	lemin->container = memalloc_allpaths();
-	lemin->debut = lemin->container;
-
-
-	lemin->container = lemin->debut;
-
+	tmp1 = lemin->container;
 	lemin->max_steps = INT_MAX;
 	while (bfs(lemin) != 0 && tmp && (lemin->state & S_END))
 	{
 		backtrack(lemin);
-		tmp = nbr_steps(lemin, lemin->debut, max = 0);
-
+		tmp = nbr_steps(lemin, tmp1, max = 0);
 		if (tmp == -1)
 			return (FAILURE);
-			
 		tmp ? lemin->max_steps = tmp : lemin->max_steps;
-		// compare if max steps gets bigger get out
+	//	print(lemin->container->path);
 		resetvisited(lemin);
 		if (!updatematrix(lemin))
 			break ;
 	}
+	ft_printf("FIAL:\n");
+	lemin->container = tmp1;
+	//print(lemin->container->path);
+	delete_node(lemin, lemin->container);	
+	delete_extra_node(lemin, lemin->container);
+	
 	//tmp == 0 ? lemin->nb_pathsbfs-- : 0;
-	lemin->container = lemin->debut;
+/*	lemin->container = lemin->debut;
 
 
 	tmp2 = lemin->container;
@@ -165,6 +167,6 @@ int			ek(t_lemin *lemin)
 		ft_printf("tmp len is %d\n", tmp3->len);
 		tmp3 = tmp3->next;
 	}
-
+*/
 	return (SUCCESS);
 }

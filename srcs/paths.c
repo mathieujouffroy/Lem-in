@@ -6,7 +6,7 @@
 /*   By: mjouffro <mjouffro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/26 16:26:52 by mjouffro          #+#    #+#             */
-/*   Updated: 2019/10/14 18:19:28 by mjouffro         ###   ########.fr       */
+/*   Updated: 2019/10/21 16:21:16 by mjouffro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,9 @@ t_links		*find_index_node(t_links *list, int index)
 	return (new);
 }
 
-int			get_matrix_path(t_lemin *lemin, t_links *tmp)
+int			get_matrix_path(t_lemin *lemin)//, t_links *tmp)
 {
+	t_links 		*tmp;
 	int				current;
 	int				len;
 	int				i;
@@ -82,15 +83,16 @@ void		get_final_paths(t_lemin *lemin)
 
 	lemin->nb_pathsek = find_nb_paths(lemin);
 	ft_printf("nb paths ek is %d\n", lemin->nb_pathsek);	
-	tmp = memalloc_links();
+	//tmp = memalloc_links();
 	lemin->container1 = memalloc_allpaths();
 	head = lemin->container1;
 	i = 0;
 	while (i < lemin->nb_pathsek)
 	{
+		tmp = memalloc_links();
 		tmp->room = lemin->sink;
 		addlinks(&lemin->container1->path, tmp);
-		length = get_matrix_path(lemin, tmp);
+		length = get_matrix_path(lemin);//, tmp);
 		if (length == lemin->cnt)
 			ft_printf("length == lemin->cnt!\n");
 		lemin->container1->len = length;
