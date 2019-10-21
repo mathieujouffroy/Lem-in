@@ -1,4 +1,4 @@
-123
+10
 ##start
 start 1 1
 1 1 1
@@ -9,13 +9,12 @@ start 1 1
 6 1 1
 ##end
 end 1 1
-start-4
+start-3
 start-1
-1-6
-2-5
+1-5
 1-2
-2-4
-2-3
-3-6
-3-end
-5-end
+3-4
+4-2
+2-end
+5-6
+6-end
