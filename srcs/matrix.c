@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   matrix.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mjouffro <mjouffro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yabecret <yabecret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/20 10:58:18 by yabecret          #+#    #+#             */
-/*   Updated: 2019/10/14 18:10:19 by mjouffro         ###   ########.fr       */
+/*   Updated: 2019/10/21 17:33:38 by yabecret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ int		find_no_end_list(t_lemin *lemin)
 	t_links		*tmp;
 
 	tmp = lemin->list;
-	//ft_printf("{blue}end index : %d\n{reset}", lemin->sink->index);
 	while (tmp)
 	{
 		if (tmp->room && tmp->room->hash == lemin->sink->pred)

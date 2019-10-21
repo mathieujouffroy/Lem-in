@@ -6,7 +6,7 @@
 /*   By: mjouffro <mjouffro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/26 15:45:00 by mjouffro          #+#    #+#             */
-/*   Updated: 2019/10/21 13:35:57 by mjouffro         ###   ########.fr       */
+/*   Updated: 2019/10/21 17:41:10 by yabecret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void print(t_links *head)
 			ft_printf("room has links\n");
 			print(head->room->links);
 		}*/
-		
+
 		head = head->next;
 	}
 }
@@ -118,27 +118,3 @@ unsigned long hashing(unsigned char *str)
 		hash = ((hash << 5) + hash) + c; /* hash * 33 + c */
 	return hash;
 }
-
-
-/*
-char	*create_tab(char *str)
-{
-	char	**new;
-	if (!(new = (char**)ft_memalloc(sizeof(char*) * 2)))
-		return (0);
-	new[0] = str;
-	return (new);
-}
-
-char	**ft_str_to_tab(char **tab, char *str)
-{
-	char	**new;
-	int		len;
-
-	if (!tab)
-		return (0);
-	// get len
-	// malloc new 
-	// memccpy
-	// 
-}*/

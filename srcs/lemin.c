@@ -6,33 +6,57 @@
 /*   By: mjouffro <mjouffro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/26 17:10:06 by mjouffro          #+#    #+#             */
-/*   Updated: 2019/10/21 15:54:39 by mjouffro         ###   ########.fr       */
+/*   Updated: 2019/10/21 18:54:55 by yabecret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-int				main(void)
+int				check_argument(t_lemin *lemin, int ac, char **av)
+{
+	int i;
+
+	i = 1;
+	while (i < ac)
+	{
+		if ((ft_strcmp(av[i], "-c") == 0) || (ft_strcmp(av[i], "-s") == 0))
+		{
+			if (ft_strcmp(av[i], "-c") == 0)
+				lemin->state |= S_COLOR;
+			else
+				lemin->state |= S_STEPS;
+		}
+		else
+		{
+			ft_printf("{red}ERROR:{reset} only -c and -s allowed\n");
+			return (FAILURE);
+		}
+		i++;
+	}
+	return (SUCCESS);
+}
+
+int				main(int ac, char **av)
 {
 	t_lemin		lemin;
 
 	ft_bzero(&lemin, sizeof(t_lemin));
-	ft_printf("size of t_graph is %lu\n", sizeof(t_graph));
-	ft_printf("size of t_links is %lu\n", sizeof(t_links));
-	ft_printf("size of t_allpaths is %lu\n", sizeof(t_allpaths));
-	if (!(parsing(&lemin)))
+	if (ac > 3)
+	{
+		ft_printf("{red}ERROR:{reset} too much arguments\n");
+		return (FAILURE);
+	}
+	else if (ac > 1 && ac <= 3)
+		if (!check_argument(&lemin, ac, av))
+			return (FAILURE);
+	if (!parsing(&lemin) || !ek(&lemin))
 	{
 		freedata(&lemin);
 		return (FAILURE);
 	}
-	if (lemin.head == NULL)
-	{
-	//	freedata(&lemin);
-		return (FAILURE);
-	}
-	ek(&lemin);
 	updatefinalmatrices(&lemin);
 	get_final_paths(&lemin);
+	ft_printf("%s\n", lemin.map);
 	solve_lemin(&lemin, 1);
 	freelemin(&lemin);
 	return (0);

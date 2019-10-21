@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_link.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mjouffro <mjouffro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yabecret <yabecret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:28:54 by yabecret          #+#    #+#             */
-/*   Updated: 2019/10/17 12:03:08 by mjouffro         ###   ########.fr       */
+/*   Updated: 2019/10/21 17:34:02 by yabecret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,18 +49,14 @@ int 	get_link(t_lemin *lemin, t_links **tmp, char *line)
 	rooms = ft_strsplit(line, '-');
 	h[0] = hashing((unsigned char*)rooms[0]);
 	h[1] = hashing((unsigned char*)rooms[1]);
-	
+
 	if (h[0] == lemin->hashstart || h[1] == lemin->hashstart)
 		lemin->state |= S_START;
 	if (h[0] == lemin->hashend || h[1] == lemin->hashend)
 		lemin->state |= S_END;
 
 	if (!(are_hash_valid(*tmp, h)))
-	{	
-		ft_printf("1 :%s\n", rooms[0]);
-		ft_printf("2 :%s\n", rooms[1]);
 		return (FAILURE);
-	}
 	l1 = memalloc_links();
 	l2 = memalloc_links();
 	addhash_links(tmp, l1, l2, h);

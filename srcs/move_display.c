@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   move_display.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yabecret <yabecret@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mjouffro <mjouffro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/26 12:59:58 by mjouffro          #+#    #+#             */
-/*   Updated: 2019/10/10 13:16:40 by yabecret         ###   ########.fr       */
+/*   Updated: 2019/10/21 17:28:31 by yabecret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,6 @@ void	fill_ants(t_lemin *lemin, t_allpaths *paths)
 		lemin->ant_state++;
 		paths->nb_ants--;
 	}
-	/*if (paths->nb_ants == 0)
-	{
-		tmp->room->antid = 0;
-	}*/
 }
 
 int		is_empty(t_allpaths *path)
@@ -67,11 +63,30 @@ int		is_empty(t_allpaths *path)
 	return (SUCCESS);
 }
 
-int		display_ants(t_allpaths	*paths, int left)
+int		display_color_ants(t_links	*tmp, int id, int left)
+{
+	while (tmp)
+	{
+		if (tmp->room->antid && left == 0)
+		{
+			ft_printf("\033[1;3%dmL%u{reset}-%s", id, tmp->room->antid, tmp->room->name);
+			left = 1;
+		}
+		else if (tmp->room->antid && left == 1)
+			ft_printf(" \033[1;3%dmL%u{reset}-%s", id, tmp->room->antid, tmp->room->name);
+		tmp = tmp->next;
+	}
+	return (left);
+}
+
+
+int		display_ants(t_lemin *lemin, t_allpaths	*paths, int left)
 {
 	t_links	*tmp;
 
 	tmp = paths->path;
+	if (lemin->state & S_COLOR)
+		return (display_color_ants(tmp, paths->color_id, left));
 	while (tmp)
 	{
 		if (tmp->room->antid && left == 0)
@@ -101,10 +116,9 @@ int		move_and_display(t_lemin *lemin, t_allpaths *path)
 	{
 		move_ants(lemin, tmp);
 		fill_ants(lemin, tmp);
-		left = display_ants(tmp, left);
+		left = display_ants(lemin, tmp, left);
 		ret = (is_empty(tmp) == 0) ? 1 : ret;
 		tmp = tmp->next;
-		//ft_printf("left is %d\n", left);
 		i++;
 	}
 	ret == 1 ? ft_printf("\n") : 0;

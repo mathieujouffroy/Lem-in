@@ -6,7 +6,7 @@
 /*   By: mjouffro <mjouffro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/23 16:20:06 by mjouffro          #+#    #+#             */
-/*   Updated: 2019/10/04 15:41:12 by yabecret         ###   ########.fr       */
+/*   Updated: 2019/10/17 11:13:59 by yabecret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,6 @@ int			max_stepsek(t_lemin *lemin, t_allpaths *head)
 	lemin->max_steps1 = INT_MAX;
 	while (nb_paths < (max_paths + 1))
 	{
-		ft_printf("{red} nb paths is : %d\n{reset}", nb_paths);
 		if ((tmp = nbr_steps2(lemin, head, nb_paths, max = 0)) == 0)
 		{
 			lemin->nb_pathsek = nb_paths - 1;
@@ -115,6 +114,5 @@ int			max_stepsek(t_lemin *lemin, t_allpaths *head)
 		nb_paths++;
 		//lemin->path_max_len = head->len;    // beware if container is better than container 1 need to change
 	}
-	ft_printf("max steps ek is %d\n", lemin->max_steps1);
 	return (1);
 }

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mjouffro <mjouffro@student.42.fr>          +#+  +:+       +#+         #
+#    By: yabecret <yabecret@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/08 09:48:30 by yabecret          #+#    #+#              #
-#    Updated: 2019/10/21 16:13:40 by mjouffro         ###   ########.fr        #
+#    Updated: 2019/10/21 18:21:59 by yabecret         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,11 +14,12 @@
 NAME	=	lem-in
 
 # Compilation
-CC			=	@cc -g #-fsanitize=address
+CC			=	@cc -g -fsanitize=address
 CFLAGS		=	-O3 -Wall -Wextra -Werror
-LIBFLAGS	=	-Iincludes
+CPPFLAGS	=	-Iincludes
 
 # Files && Objs
+
 SRC_PATH	= srcs
 
 OBJ_PATH	= objs
@@ -95,11 +96,11 @@ $(OBJ_PATH)		:
 
 $(NAME)			:	$(OBJ)
 					@make -C $(LIB)
-					@$(CC) $(CFLAGS) $(LIBFLAGS) -g -o $@ $^ $(LIB)libft.a
+					@$(CC) $(CFLAGS) $(CPPFLAGS) -g -o $@ $^ $(LIB)libft.a
 					@echo "make $(NAME)$(LOG_GREEN) ✓ $(LOG_NOCOLOR)"
 
 $(OBJ_PATH)/%.o:	$(SRC_PATH)/%.c
-					$(CC) $(CFLAGS) $(LIBFLAGS) -c $< -o $@
+					$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
 
 # Clean rules
 clean			:

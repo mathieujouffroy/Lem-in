@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bfs.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mjouffro <mjouffro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yabecret <yabecret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 19:21:52 by yabecret          #+#    #+#             */
-/*   Updated: 2019/10/17 17:42:32 by mjouffro         ###   ########.fr       */
+/*   Updated: 2019/10/21 18:55:56 by yabecret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int		sink_in_queue(t_lemin *lemin, t_links *queue)
 		i++;
 		if (queue->room->name != lemin->end)
 			j++;
-		queue = queue->next;	
+		queue = queue->next;
 	}
 	if (i == j)
 		return (0);
@@ -37,7 +37,7 @@ int			bfs(t_lemin *lemin)
 	t_links			*new;
 	t_links 		*todelete;
 	int				cnt;
-	int				sink = 0;
+	static int		sink = 0;
 
 	cnt = 0;
 	queue = NULL;
@@ -57,10 +57,7 @@ int			bfs(t_lemin *lemin)
 		free(todelete);
 	}
 	if (sink == 0)
-	{
 		lemin->state &= ~S_END;
-		ft_printf("sink is not present in the queue\n");
-	}
 	if (lemin->container && lemin->container->len != 0)
 	{
 		lemin->container->next = memalloc_allpaths();

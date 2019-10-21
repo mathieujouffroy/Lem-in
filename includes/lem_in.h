@@ -11,8 +11,12 @@
 # define S_LINKS (1 << 1)
 # define S_START (1 << 2)
 # define S_END   (1 << 3)
+# define S_COLOR (1 << 4)
+# define S_STEPS (1 << 5)
+
 # define S_R1 (1 << 0)
 # define S_R2 (1 << 1)
+
 # define S_FREE (1 << 4)
 
 
@@ -43,6 +47,7 @@ typedef	struct 			s_allpaths
 	unsigned int		len;
 	unsigned int		nb_ants;
 	unsigned int		max_steps;
+	int					color_id;
 
 }						t_allpaths;
 
@@ -59,6 +64,7 @@ typedef	struct			s_lemin
 	unsigned int		path_max_lenbfs;
 	unsigned int		path_max_lenek;
 	int					state;
+	int					color;
 	char                *start;
 	char				*end;
 	char				*map;
@@ -141,12 +147,12 @@ int			**memalloc_matrix(int size);
 **                     FREE
 */
 
-int freegraph(t_graph **graph);
-int freelinks(t_links **links);
-int	freelist(t_links *links, int i);
-int freeallpaths(t_allpaths *allpaths);
+int 		freegraph(t_graph **graph);
+int			freeroomlinks(t_links *list, int i);
+int			freelist(t_links *links, int i);
+int 		freeallpaths(t_allpaths *allpaths);
 int			freedata(t_lemin *lemin);
-void freelemin(t_lemin *lemin);
+void 		freelemin(t_lemin *lemin);
 
 /*
 **                     UTILS
@@ -218,7 +224,7 @@ int		sharing_ants(t_lemin *lemin);
 **                     display
 */
 
-int		display_ants(t_allpaths	*paths, int left);
+int		display_ants(t_lemin *lemin, t_allpaths	*paths, int left);
 
 /*
 **                     solve
