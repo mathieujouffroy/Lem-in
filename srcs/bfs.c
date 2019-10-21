@@ -6,7 +6,7 @@
 /*   By: yabecret <yabecret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 19:21:52 by yabecret          #+#    #+#             */
-/*   Updated: 2019/10/21 18:55:56 by yabecret         ###   ########.fr       */
+/*   Updated: 2019/10/21 19:20:47 by yabecret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,9 @@ int			bfs(t_lemin *lemin)
 	t_links			*new;
 	t_links 		*todelete;
 	int				cnt;
-	static int		sink = 0;
+	int				sink;
 
+	sink = 0;
 	cnt = 0;
 	queue = NULL;
 	todelete = NULL;
@@ -57,7 +58,10 @@ int			bfs(t_lemin *lemin)
 		free(todelete);
 	}
 	if (sink == 0)
+	{
 		lemin->state &= ~S_END;
+		return (FAILURE);
+	}
 	if (lemin->container && lemin->container->len != 0)
 	{
 		lemin->container->next = memalloc_allpaths();

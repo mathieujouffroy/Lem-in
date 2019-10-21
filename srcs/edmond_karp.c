@@ -6,7 +6,7 @@
 /*   By: yabecret <yabecret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/25 16:27:12 by yabecret          #+#    #+#             */
-/*   Updated: 2019/10/21 18:51:28 by yabecret         ###   ########.fr       */
+/*   Updated: 2019/10/21 19:21:24 by yabecret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,9 +132,9 @@ int			ek(t_lemin *lemin)
 		if (!updatematrix(lemin))
 			break ;
 	}
-	if (!(lemin->state & S_END))
-		return (FAILURE);
 	lemin->container = tmp1;
+	if (lemin->container->path == NULL)
+		return (FAILURE);
 	delete_node(lemin, lemin->container);
 	delete_extra_node(lemin, lemin->container);
 	return (SUCCESS);
