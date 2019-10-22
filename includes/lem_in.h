@@ -103,7 +103,7 @@ int			parsing(t_lemin *lemin);
 
 int			ft_str_is_digit(char *str);
 int			start_end(char *line);
-void		get_ants(t_lemin *lemin, char *line);
+int			get_ants(t_lemin *lemin, char *line);
 void		add_command_to_state(t_lemin *lemin, char *line);
 
 /*
@@ -196,6 +196,7 @@ void 	printmatrix(int **matrix, int size);
 **                     OPTIONS
 */
 
+int					ft_cntchr(char *str, char c);
 int					display_color_ants(t_links *tmp, int id, int left);
 
 /*

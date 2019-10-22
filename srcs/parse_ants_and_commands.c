@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_ants_and_commands.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mjouffro <mjouffro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yabecret <yabecret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 20:03:40 by mjouffro          #+#    #+#             */
-/*   Updated: 2019/10/21 20:04:11 by mjouffro         ###   ########.fr       */
+/*   Updated: 2019/10/23 00:35:56 by yabecret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,16 @@ int		ft_str_is_digit(char *str)
 	return (*str == '\0' ? SUCCESS : FAILURE);
 }
 
-void	get_ants(t_lemin *lemin, char *line)
+int		get_ants(t_lemin *lemin, char *line)
 {
 	lemin->nb_ants = ft_atoi(line);
+	if (lemin->nb_ants > INT_MAX)
+	{
+		ft_printf("{red}ERROR:{reset} ants overflow\n");
+		return (gnl_exit(line));
+	}
 	add_line_and_delete(lemin, line);
+	return (SUCCESS);
 }
 
 int		start_end(char *line)

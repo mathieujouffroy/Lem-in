@@ -1,12 +1,12 @@
-4
+2147483648
 ##start
 start 0 0
 ##end
 end 1 1
 dead0 2 2
 dead1 3 3
-mid0 4 4
-mid1 5 5
+mid0 4 -2147483648
+mid1 5 2147483647
 mid2 6 6
 start-dead0
 start-mid0

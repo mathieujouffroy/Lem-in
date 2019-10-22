@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mjouffro <mjouffro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yabecret <yabecret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 20:08:48 by mjouffro          #+#    #+#             */
-/*   Updated: 2019/10/22 13:55:21 by mjouffro         ###   ########.fr       */
+/*   Updated: 2019/10/22 22:00:54 by yabecret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,10 @@ int		parsing(t_lemin *lemin)
 		else if (is_comment(line))
 			add_line_and_delete(lemin, line);
 		else if (ft_str_is_digit(line) && !lemin->nb_ants)
-			get_ants(lemin, line);
+		{
+			if (!get_ants(lemin, line))
+				return (0);
+		}
 		else if (links_formatting(lemin, line))
 		{
 			if (!parse_links(lemin, line))

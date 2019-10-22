@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   steps_ek.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mjouffro <mjouffro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yabecret <yabecret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/23 16:20:06 by mjouffro          #+#    #+#             */
-/*   Updated: 2019/10/22 16:31:29 by mjouffro         ###   ########.fr       */
+/*   Updated: 2019/10/22 21:48:32 by yabecret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ int						max_stepsek(t_lemin *lemin, t_allpaths *head)
 	nb_paths = 1;
 	tmp = 1;
 	max_paths = lemin->nb_pathsek;
-	lemin->max_steps1 = INT_MAX;
+	lemin->max_steps1 = UINT_MAX;
 	while (nb_paths < (max_paths + 1))
 	{
 		max = 0;

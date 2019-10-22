@@ -3,31 +3,48 @@
 /*                                                        :::      ::::::::   */
 /*   parse_rooms.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mjouffro <mjouffro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yabecret <yabecret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 20:05:52 by mjouffro          #+#    #+#             */
-/*   Updated: 2019/10/22 15:58:56 by mjouffro         ###   ########.fr       */
+/*   Updated: 2019/10/23 00:33:29 by yabecret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-char				*get_name(char *line)
+char *get_name(char *line)
 {
-	int				i;
-	char			**rooms;
-	char			*ret;
+	int i;
+	long res;
+	char **rooms;
+	char *ret;
 
-	i = 0;
+	if ((i = ft_cntchr(line, ' ')) != 2)
+		return (NULL);
 	rooms = ft_strsplit(line, ' ');
-	if ((!ft_atoi(rooms[1]) && ft_strcmp(rooms[1], "0"))
-		|| (!ft_atoi(rooms[2]) && ft_strcmp(rooms[2], "0")))
+	i = 0;
+	if (!rooms[0] || !rooms[1] || !rooms[2])
 	{
-		ft_strdel(&rooms[1]);
-		ft_strdel(&rooms[2]);
-		ft_strdel(&rooms[0]);
+		while (rooms[i])
+		{
+			free(rooms[i]);
+			i++;
+		}
 		free(rooms);
 		return (NULL);
+	}
+	while (i < 2)
+	{
+		res = ft_atoll(rooms[i + 1]);
+		if (res > INT_MAX || res < INT_MIN)
+		{
+			ft_strdel(&rooms[1]);
+			ft_strdel(&rooms[2]);
+			ft_strdel(&rooms[0]);
+			free(rooms);
+			return (NULL);
+		}
+		i++;
 	}
 	ft_strdel(&rooms[1]);
 	ft_strdel(&rooms[2]);
@@ -36,7 +53,7 @@ char				*get_name(char *line)
 	return (ret);
 }
 
-void				room_start_or_end(t_lemin *lemin, t_links *links)
+void room_start_or_end(t_lemin *lemin, t_links *links)
 {
 	if (is_start(lemin))
 	{
@@ -52,9 +69,9 @@ void				room_start_or_end(t_lemin *lemin, t_links *links)
 	}
 }
 
-t_links				*init_links(t_lemin *lemin, char *name, unsigned long hash)
+t_links *init_links(t_lemin *lemin, char *name, unsigned long hash)
 {
-	t_links			*links;
+	t_links *links;
 
 	links = memalloc_links();
 	links->room = memalloc_graph();
@@ -65,12 +82,12 @@ t_links				*init_links(t_lemin *lemin, char *name, unsigned long hash)
 	return (links);
 }
 
-int					get_room(t_lemin *lemin, t_links **tmp, char *line)
+int get_room(t_lemin *lemin, t_links **tmp, char *line)
 {
-	t_links			*links;
-	char			*name;
-	char			*linetmp;
-	unsigned long	hash;
+	t_links *links;
+	char *name;
+	char *linetmp;
+	unsigned long hash;
 
 	linetmp = ft_strdup(line);
 	if ((name = get_name(linetmp)) == NULL)
@@ -94,9 +111,9 @@ int					get_room(t_lemin *lemin, t_links **tmp, char *line)
 	return (SUCCESS);
 }
 
-int					parse_room(t_lemin *lemin, char *line)
+int parse_room(t_lemin *lemin, char *line)
 {
-	int				ret;
+	int ret;
 
 	if (is_room(line))
 	{
