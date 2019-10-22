@@ -6,7 +6,7 @@
 /*   By: mjouffro <mjouffro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/26 17:10:06 by mjouffro          #+#    #+#             */
-/*   Updated: 2019/10/21 18:54:55 by yabecret         ###   ########.fr       */
+/*   Updated: 2019/10/22 16:48:42 by mjouffro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int				main(int ac, char **av)
 	t_lemin		lemin;
 
 	ft_bzero(&lemin, sizeof(t_lemin));
+	lemin.c_id = 1;
 	if (ac > 3)
 	{
 		ft_printf("{red}ERROR:{reset} too much arguments\n");
@@ -55,7 +56,7 @@ int				main(int ac, char **av)
 		return (FAILURE);
 	}
 	updatefinalmatrices(&lemin);
-	get_final_paths(&lemin);
+	get_final_paths(&lemin, 0);
 	ft_printf("%s\n", lemin.map);
 	solve_lemin(&lemin, 1);
 	freelemin(&lemin);

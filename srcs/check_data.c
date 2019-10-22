@@ -6,27 +6,27 @@
 /*   By: mjouffro <mjouffro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/26 17:10:25 by mjouffro          #+#    #+#             */
-/*   Updated: 2019/09/26 11:48:45 by mjouffro         ###   ########.fr       */
+/*   Updated: 2019/10/22 15:55:06 by mjouffro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-int		is_comment(char *line)
+int			is_comment(char *line)
 {
 	if (line && (line[0] == '#'))
 		return (SUCCESS);
 	return (FAILURE);
 }
 
-int		is_command(char *line)
+int			is_command(char *line)
 {
 	if (is_comment(line) && line[1] == '#')
 		return (SUCCESS);
 	return (FAILURE);
 }
 
-int		is_start(t_lemin *lemin)
+int			is_start(t_lemin *lemin)
 {
 	if (lemin->state & S_START)
 	{
@@ -36,7 +36,7 @@ int		is_start(t_lemin *lemin)
 	return (0);
 }
 
-int		is_end(t_lemin *lemin)
+int			is_end(t_lemin *lemin)
 {
 	if (lemin->state & S_END)
 	{
@@ -46,29 +46,31 @@ int		is_end(t_lemin *lemin)
 	return (0);
 }
 
-int		is_hash_existing(t_links *tmp, unsigned long hash)
+int			is_room(char *line)
 {
-	while (tmp)
-	{
-		if (tmp->room->hash == hash)
-			return (1);
-		tmp = tmp->next;
-	}
-	return (0);
-}
+	int		i;
+	int		failure;
 
-int		are_hash_valid(t_links *tmp, unsigned long *h)
-{
-	int state;
-
-	state = 0;
-	while (tmp)
+	i = 0;
+	failure = 0;
+	while (line[i] != '\0')
 	{
-		if (!(state & S_R1) && (tmp->room->hash == h[0]))
-			state |= S_R1;
-		else if (!(state & S_R2) && (tmp->room->hash == h[1]))
-			state |= S_R2;
-		tmp = tmp->next;
+		(line[0] == ' ' || line[0] == 'L' || line[0] == '#') ? failure = 1 : 0;
+		while ((line[i] >= 33) && (line[i] <= 126) && (line[i] != 45))
+			i++;
+		(line[i] != ' ') ? failure = 1 : i++;
+		if (line[i] == '-' || line[i] == '+')
+			i++;
+		while (*line && ft_isdigit(line[i]))
+			i++;
+		(line[i] != ' ') ? failure = 1 : i++;
+		if (line[i] == '-' || line[i] == '+')
+			i++;
+		while (*line && ft_isdigit(line[i]))
+			i++;
+		(line[i] != '\0') ? failure = 1 : 0;
 	}
-	return (((state & S_R1) && (state & S_R2)) ? SUCCESS : FAILURE);
+	if (failure == 1)
+		return (FAILURE);
+	return (SUCCESS);
 }

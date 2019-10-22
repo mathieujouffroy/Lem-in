@@ -59,7 +59,9 @@ typedef	struct			s_lemin
 	unsigned int		max_steps1;
 	unsigned int		total;
 	unsigned int		reste;
+	unsigned int		reste_ek;
 	unsigned int		remainder;
+	unsigned int		remainder_ek;
 	unsigned int		path_max_len;
 	unsigned int		path_max_lenbfs;
 	unsigned int		path_max_lenek;
@@ -69,6 +71,7 @@ typedef	struct			s_lemin
 	char				*end;
 	char				*map;
 	int					cnt;
+	int					c_id;
 	unsigned int		nb_pathsbfs;
 	unsigned int		nb_pathsek;
 	unsigned int		nb_paths;
@@ -108,9 +111,8 @@ void		add_command_to_state(t_lemin *lemin, char *line);
 */
 
 char		*get_name(char *line);
-int			is_room(char *line);
-int			is_start(t_lemin *lemin);
-int			is_end(t_lemin *lemin);
+void		room_start_or_end(t_lemin *lemin, t_links *links);
+t_links		*init_links(t_lemin *lemin, char *name, unsigned long hash);
 int			get_room(t_lemin *lemin, t_links **tmp, char *line);
 
 /*
@@ -119,20 +121,36 @@ int			get_room(t_lemin *lemin, t_links **tmp, char *line);
 
 int			is_comment(char *line);
 int			is_command(char *line);
-int			is_room_existing(t_links *tmp, char *name);
+int			is_start(t_lemin *lemin);
+int			is_end(t_lemin *lemin);
+int			is_room(char *line);
+
+
+/*
+**                     HASH
+*/
+
+unsigned long hashing(unsigned char *str);
 int			is_hash_existing(t_links *tmp, unsigned long hash);
 int			are_hash_valid(t_links *tmp, unsigned long *h);
-int			are_rooms_valid(t_links *tmp, char *r1, char *r2);
-
+t_links		*find_hash_node(t_links *list, unsigned long hash);
 
 /*
 **                     PARSE LINKS
 */
 
 int		get_link(t_lemin *lemin, t_links **tmp, char *line);
+int					links_formatting(t_lemin *lemin, char *line);
 void	addroom_links(t_links **list, t_links *l1, t_links *l2, char **rooms);
 int		src_len(char *line, char c);
 
+
+/*
+**                     BACKWARD
+*/
+
+int					check_back_path(t_lemin *lemin, t_graph *room);
+void	go_backwards(t_links **queue, t_links *list, t_graph *room, int back);
 
 /*
 **                     MEMORY ALLOCATION
@@ -142,6 +160,16 @@ t_graph		*memalloc_graph(void);
 t_links		*memalloc_links(void);
 t_allpaths	*memalloc_allpaths(void);
 int			**memalloc_matrix(int size);
+
+
+/*
+**                     DELETE
+*/
+
+
+void		delete_extra_node(t_lemin *lemin, t_allpaths *head);
+void		delete_path_too_big(t_lemin *lemin, t_allpaths *head);
+
 
 /*
 **                     FREE
@@ -163,7 +191,12 @@ void	addlinks(t_links **links, t_links *new);
 void	printall(t_links *tmp);
 void	print(t_links *head);
 void 	printmatrix(int **matrix, int size);
-unsigned long hashing(unsigned char *str);
+
+/*
+**                     OPTIONS
+*/
+
+int					display_color_ants(t_links *tmp, int id, int left);
 
 /*
 **                     ERRORS
@@ -176,13 +209,15 @@ int		exit_with_message_room_duplicate(char *line);
 **                     BFS
 */
 
-t_links			*find_hash_node(t_links *list, unsigned long hash);
 void			resetvisited(t_lemin *lemin);
 int				backtrack(t_lemin *lemin);
 int				bfs(t_lemin *lemin);
 int				len_max(t_lemin *lemin, t_allpaths *head);
 unsigned int	nbr_steps(t_lemin *lemin, t_allpaths *head, unsigned int max);
 unsigned int	get_total(t_lemin *lemin, t_allpaths *head);
+int				bfs_exit_or_malloc_path(t_lemin *lemin, int sink);
+t_links			*init_queue_bfs(t_lemin *lemin);
+int				sink_in_queue(t_lemin *lemin, t_links *queue);
 
 /*
 **                     queue
@@ -192,13 +227,11 @@ void	enqueue_adjacent(t_lemin *lemin, t_links **queue, t_graph *room);
 void	enqueue(t_links **links, t_links *new);
 void	dequeue(t_links **links);
 void	update_info_enqueue(t_links **queue, t_links *list, t_graph *room);
-void	go_backwards(t_links **queue, t_links *list, t_graph *room, int back);
 
 /*
 **                     matrix
 */
 
-void	get_final_paths(t_lemin *lemin);
 int		updatefinalmatrices(t_lemin *lemin);
 int		updatematrix(t_lemin *lemin);
 int		updateweightmatrix(t_lemin *lemin);
@@ -208,11 +241,27 @@ int		find_no_end_list(t_lemin *lemin);
 
 int	ek(t_lemin *lemin);
 
+
+
 /*
-**                     backtrack
+**                     CALCULUS
 */
 
-int		get_matrix_path(t_lemin *lemin); //, t_links *tmp);
+unsigned int		max_steps_calculus(t_lemin *lemin, unsigned int len);
+void				remainder_and_reste_calculus(t_lemin *lemin);
+unsigned int		max_steps_calculus_ek(t_lemin *lemin, unsigned int len);
+void				remainder_and_reste_calculus_ek(t_lemin *lemin, unsigned int total);
+
+/*
+**                     PATHS
+*/
+
+t_links				*find_index_node(t_links *list, int index);
+int					find_nb_paths(t_lemin *lemin);
+int					get_matrix_path(t_lemin *lemin);
+void				sort_and_maxstepsek(t_lemin *lemin);
+void				get_final_paths(t_lemin *lemin, unsigned int i);
+
 
 /*
 **                     sharing_ants
@@ -241,8 +290,6 @@ int						max_stepsek(t_lemin *lemin, t_allpaths *head);
 
 t_allpaths *sort_paths(t_allpaths *container);
 
-
-void		delete_extra_node(t_lemin *lemin, t_allpaths *head);
 
 int			exit_with_message_room(char *line);
 int			exit_with_message_links(char *line);

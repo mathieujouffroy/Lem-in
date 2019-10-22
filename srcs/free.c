@@ -3,25 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yabecret <yabecret@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mjouffro <mjouffro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/14 15:40:11 by yabecret          #+#    #+#             */
-/*   Updated: 2019/10/21 17:33:20 by yabecret         ###   ########.fr       */
+/*   Updated: 2019/10/22 14:03:47 by mjouffro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-int			freegraph(t_graph **room)
-{
-	if (!(*room))
-		return (FAILURE);
-	//freelinks(&((*room)->links));
-	ft_memdel((void **)&(*room));
-	return (SUCCESS);
-}
-
-int 		freeallpaths(t_allpaths *allpaths)
+int				freeallpaths(t_allpaths *allpaths)
 {
 	t_allpaths *next;
 
@@ -35,11 +26,10 @@ int 		freeallpaths(t_allpaths *allpaths)
 		allpaths = next;
 	}
 	free(allpaths);
-	//ft_memdel((void**)allpaths);
 	return (SUCCESS);
 }
 
-int			freeroomlinks(t_links *list, int i)
+int				freeroomlinks(t_links *list, int i)
 {
 	if (!(list))
 		return (FAILURE);
@@ -52,9 +42,9 @@ int			freeroomlinks(t_links *list, int i)
 	return (SUCCESS);
 }
 
-int			freelist(t_links *links, int i)
+int				freelist(t_links *links, int i)
 {
-	t_links *next;
+	t_links		*next;
 
 	if (!(links))
 		return (FAILURE);
@@ -69,13 +59,12 @@ int			freelist(t_links *links, int i)
 		free(links);
 		links = next;
 	}
-//	free(links);
 	return (SUCCESS);
 }
 
-int			freedata(t_lemin *lemin)
+int				freedata(t_lemin *lemin)
 {
-	int		i;
+	int			i;
 
 	if (lemin->map)
 		ft_strdel(&lemin->map);
@@ -84,26 +73,14 @@ int			freedata(t_lemin *lemin)
 		freeroomlinks(lemin->list, i = 0);
 		freelist(lemin->list, i = 1);
 	}
-	//free(lemin->list->room);
 	return (SUCCESS);
 }
 
-int		freematrix(t_lemin *lemin)
+void			freelemin(t_lemin *lemin)
 {
-	int i;
+	int			i;
 
 	i = 0;
-	while (i < lemin->cnt)
-		ft_memdel((void**)(lemin->matrix[i++]));
-	free(lemin->matrix);
-	return (0);
-}
-
-
-void 		freelemin(t_lemin *lemin)
-{
-	int i = 0;
-
 	while (i < lemin->cnt)
 	{
 		free(lemin->matrix[i]);

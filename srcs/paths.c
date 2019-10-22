@@ -6,16 +6,16 @@
 /*   By: mjouffro <mjouffro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/26 16:26:52 by mjouffro          #+#    #+#             */
-/*   Updated: 2019/10/21 17:40:30 by yabecret         ###   ########.fr       */
+/*   Updated: 2019/10/22 16:42:28 by mjouffro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-int			find_nb_paths(t_lemin *lemin)
+int					find_nb_paths(t_lemin *lemin)
 {
-	int 		ret;
-	int 		cnt;
+	int				ret;
+	int				cnt;
 
 	cnt = 0;
 	ret = 0;
@@ -28,7 +28,7 @@ int			find_nb_paths(t_lemin *lemin)
 	return (ret);
 }
 
-t_links		*find_index_node(t_links *list, int index)
+t_links				*find_index_node(t_links *list, int index)
 {
 	t_links			*new;
 	t_links			*tmp;
@@ -48,9 +48,9 @@ t_links		*find_index_node(t_links *list, int index)
 	return (new);
 }
 
-int			get_matrix_path(t_lemin *lemin)
+int					get_matrix_path(t_lemin *lemin)
 {
-	t_links 		*tmp;
+	t_links			*tmp;
 	int				current;
 	int				len;
 	int				i;
@@ -73,18 +73,36 @@ int			get_matrix_path(t_lemin *lemin)
 	return (len);
 }
 
-void		get_final_paths(t_lemin *lemin)
+void				sort_and_maxstepsek(t_lemin *lemin)
 {
-	t_links 		*tmp;
+	t_allpaths		*head;
+	unsigned int	i;
+
+	lemin->container1 = sort_paths(lemin->container1);
+	head = lemin->container1;
+	i = 1;
+	while (lemin->container1)
+	{
+		lemin->container1->color_id = i;
+		i++;
+		if (i == 8)
+			i = 1;
+		lemin->container1 = lemin->container1->next;
+	}
+	lemin->container1 = head;
+	max_stepsek(lemin, head);
+}
+
+void				get_final_paths(t_lemin *lemin, unsigned int i)
+{
+	t_links			*tmp;
 	t_allpaths		*tmp2;
 	t_allpaths		*head;
-	int 			length;
-	unsigned int	i;
+	int				length;
 
 	lemin->nb_pathsek = find_nb_paths(lemin);
 	lemin->container1 = memalloc_allpaths();
 	head = lemin->container1;
-	i = 0;
 	while (i < lemin->nb_pathsek)
 	{
 		tmp = memalloc_links();
@@ -101,17 +119,5 @@ void		get_final_paths(t_lemin *lemin)
 		i++;
 	}
 	lemin->container1 = head;
-	lemin->container1 = sort_paths(lemin->container1);
-	head = lemin->container1;
-	i = 1;
-	while (lemin->container1)
-	{
-		lemin->container1->color_id = i;
-		i++;
-		if (i == 8)
-			i = 1;
-		lemin->container1 = lemin->container1->next;
-	}
-	lemin->container1 = head;
-	max_stepsek(lemin, head);
+	sort_and_maxstepsek(lemin);
 }

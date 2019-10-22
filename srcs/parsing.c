@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parsing.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mjouffro <mjouffro@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/21 20:08:48 by mjouffro          #+#    #+#             */
+/*   Updated: 2019/10/22 13:55:21 by mjouffro         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "lem_in.h"
 
 int		gnl_exit(char *line)
@@ -20,10 +32,11 @@ void	add_line_and_delete(t_lemin *lemin, char *line)
 
 int		is_data_sufficient(t_lemin *lemin)
 {
-	if (!(lemin->state & S_LINKS) || !(lemin->state & S_START) 
+	if (!(lemin->state & S_LINKS) || !(lemin->state & S_START)
 	|| !(lemin->state & S_END) || !lemin->nb_ants)
 	{
-		ft_printf("{red}ERROR:{reset} not enough data : missing source, sink, links or ants\n");
+		ft_printf("{red}ERROR:{reset} not enough data : ");
+		ft_printf("missing source, sink, links or ants\n");
 		return (0);
 	}
 	return (1);
@@ -42,7 +55,7 @@ int		parsing(t_lemin *lemin)
 			add_line_and_delete(lemin, line);
 		else if (ft_str_is_digit(line) && !lemin->nb_ants)
 			get_ants(lemin, line);
-		else if (ft_strchr(line, '-') && (lemin->state & S_ROOMS) && !ft_strchr(line, ' '))
+		else if (links_formatting(lemin, line))
 		{
 			if (!parse_links(lemin, line))
 				return (0);
@@ -57,4 +70,3 @@ int		parsing(t_lemin *lemin)
 	}
 	return (is_data_sufficient(lemin));
 }
-

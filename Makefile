@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: yabecret <yabecret@student.42.fr>          +#+  +:+       +#+         #
+#    By: mjouffro <mjouffro@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/08 09:48:30 by yabecret          #+#    #+#              #
-#    Updated: 2019/10/21 18:21:59 by yabecret         ###   ########.fr        #
+#    Updated: 2019/10/22 15:00:20 by mjouffro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 NAME	=	lem-in
 
 # Compilation
-CC			=	@cc -g -fsanitize=address
+CC			=	@cc -g #-fsanitize=address
 CFLAGS		=	-O3 -Wall -Wextra -Werror
 CPPFLAGS	=	-Iincludes
 
@@ -50,6 +50,11 @@ SRC_NAME 	=		lemin.c								\
 					steps_ek.c 							\
 					sort_container.c					\
 					move_display.c						\
+					hash.c								\
+					options.c							\
+					backward.c							\
+					delete_paths.c						\
+					calculus.c							\
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 

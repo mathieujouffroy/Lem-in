@@ -3,19 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   parse_link.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yabecret <yabecret@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mjouffro <mjouffro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:28:54 by yabecret          #+#    #+#             */
-/*   Updated: 2019/10/21 17:34:02 by yabecret         ###   ########.fr       */
+/*   Updated: 2019/10/22 13:52:36 by mjouffro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-void 	addhash_links(t_links **list, t_links *l1, t_links *l2, unsigned long *h)
+void				addhash_links(t_links **list, t_links *l1, t_links *l2,
+					unsigned long *h)
 {
-	t_links	*tmp;
-	int		state;
+	t_links			*tmp;
+	int				state;
 
 	tmp = *list;
 	state = 0;
@@ -39,7 +40,7 @@ void 	addhash_links(t_links **list, t_links *l1, t_links *l2, unsigned long *h)
 	}
 }
 
-int 	get_link(t_lemin *lemin, t_links **tmp, char *line)
+int					get_link(t_lemin *lemin, t_links **tmp, char *line)
 {
 	t_links			*l1;
 	t_links			*l2;
@@ -49,12 +50,10 @@ int 	get_link(t_lemin *lemin, t_links **tmp, char *line)
 	rooms = ft_strsplit(line, '-');
 	h[0] = hashing((unsigned char*)rooms[0]);
 	h[1] = hashing((unsigned char*)rooms[1]);
-
 	if (h[0] == lemin->hashstart || h[1] == lemin->hashstart)
 		lemin->state |= S_START;
 	if (h[0] == lemin->hashend || h[1] == lemin->hashend)
 		lemin->state |= S_END;
-
 	if (!(are_hash_valid(*tmp, h)))
 		return (FAILURE);
 	l1 = memalloc_links();
@@ -68,7 +67,15 @@ int 	get_link(t_lemin *lemin, t_links **tmp, char *line)
 	return (SUCCESS);
 }
 
-int		parse_links(t_lemin *lemin, char *line)
+int					links_formatting(t_lemin *lemin, char *line)
+{
+	if (ft_strchr(line, '-') && (lemin->state & S_ROOMS)
+	&& !ft_strchr(line, ' '))
+		return (1);
+	return (0);
+}
+
+int					parse_links(t_lemin *lemin, char *line)
 {
 	if (!(lemin->start && lemin->end))
 		return (exit_with_message_links(line));

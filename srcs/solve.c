@@ -6,16 +6,17 @@
 /*   By: mjouffro <mjouffro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/04 12:08:13 by mjouffro          #+#    #+#             */
-/*   Updated: 2019/10/21 18:52:31 by yabecret         ###   ########.fr       */
+/*   Updated: 2019/10/22 15:49:50 by mjouffro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-t_allpaths *final_solution(t_lemin *lemin)
+t_allpaths			*final_solution(t_lemin *lemin)
 {
-	t_allpaths *tmp = NULL;
+	t_allpaths		*tmp;
 
+	tmp = NULL;
 	if (lemin->max_steps < lemin->max_steps1)
 	{
 		tmp = lemin->container;
@@ -32,29 +33,36 @@ t_allpaths *final_solution(t_lemin *lemin)
 	return (tmp);
 }
 
-// il faut boucler sur tmp
-// cpdt ds container : il y a un chemin en trop (mal deleted)
-
-int		ants_per_path(t_lemin *lemin, t_allpaths *head)
+t_allpaths			*ants_first_step(t_lemin *lemin, t_allpaths *head)
 {
 	t_allpaths		*tmp;
-	int				total = 0;
-	int				remainder = 0;
-	int				reste;
-	unsigned int	i = 0;
+	unsigned int	i;
 
+	i = 0;
 	tmp = head;
-
 	while (tmp && i < lemin->nb_paths)
 	{
 		tmp->nb_ants = (lemin->path_max_len - tmp->len + 1);
-		total += tmp->nb_ants;
+		lemin->total += tmp->nb_ants;
 		tmp = tmp->next;
 		i++;
 	}
-	remainder = (lemin->nb_ants - total) / lemin->nb_paths;
-	reste = lemin->nb_ants - (remainder * lemin->nb_paths) - total;
 	tmp = head;
+	return (tmp);
+}
+
+int					ants_per_path(t_lemin *lemin, t_allpaths *head)
+{
+	t_allpaths		*tmp;
+	unsigned int	i;
+	int				remainder;
+	int				reste;
+
+	lemin->total = 0;
+	remainder = 0;
+	tmp = ants_first_step(lemin, head);
+	remainder = (lemin->nb_ants - lemin->total) / lemin->nb_paths;
+	reste = lemin->nb_ants - (remainder * lemin->nb_paths) - lemin->total;
 	i = 0;
 	while (tmp && i < lemin->nb_paths)
 	{
@@ -67,10 +75,10 @@ int		ants_per_path(t_lemin *lemin, t_allpaths *head)
 	return (0);
 }
 
-int		solve_lemin(t_lemin *lemin, unsigned int move)
+int					solve_lemin(t_lemin *lemin, unsigned int move)
 {
-	t_allpaths *head;
-	t_allpaths *tmp;
+	t_allpaths		*head;
+	t_allpaths		*tmp;
 
 	head = final_solution(lemin);
 	tmp = head;
@@ -80,6 +88,6 @@ int		solve_lemin(t_lemin *lemin, unsigned int move)
 	while (move <= lemin->max_steps)
 		move += move_and_display(lemin, head);
 	if (lemin->state & S_STEPS)
-		ft_printf("\nNombre de coups : {red}%u\n{reset}", lemin->max_steps);
+		ft_printf("\nOur nbr of steps : {red}%u\n{reset}", lemin->max_steps);
 	return (1);
 }

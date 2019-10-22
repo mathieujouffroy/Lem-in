@@ -6,13 +6,13 @@
 /*   By: mjouffro <mjouffro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/09 01:06:18 by yabecret          #+#    #+#             */
-/*   Updated: 2019/10/15 15:36:55 by mjouffro         ###   ########.fr       */
+/*   Updated: 2019/10/22 16:35:35 by mjouffro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-void	enqueue(t_links **links, t_links *new)
+void				enqueue(t_links **links, t_links *new)
 {
 	t_links			*tmp;
 
@@ -29,11 +29,12 @@ void	enqueue(t_links **links, t_links *new)
 	tmp->next = new;
 }
 
-void	update_info_enqueue(t_links **queue, t_links *list, t_graph *room)
+void				update_info_enqueue(t_links **queue, t_links *list,
+					t_graph *room)
 {
 	char			*name;
 	unsigned long	pred;
-	t_links 		*tmp;
+	t_links			*tmp;
 
 	tmp = NULL;
 	name = room->name;
@@ -46,53 +47,16 @@ void	update_info_enqueue(t_links **queue, t_links *list, t_graph *room)
 	enqueue(queue, tmp);
 }
 
-int		check_back_path(t_lemin *lemin, t_graph *room)
+int					node_used_in_path(t_lemin *lemin, t_graph *adjacent)
 {
-	t_links 		*list;
-	int				iroom;
+	int				i;
 	int				iadjacent;
-	int				id;
-
-	id = 0;
-	list = room->links;
-	iroom = room->index;
-	while (list)
-	{
-		iadjacent = list->room->index;
-		if ((list->room->hash != lemin->hashstart)
-		&& (lemin->matrix[iadjacent][iroom] == 1)
-		&& (lemin->matrix[iroom][iadjacent] == 0)
-		&& (list->room->visited == false))
-			id = list->room->index;
-		list = list->next;
-	}
-	return (id);
-}
-
-void	go_backwards(t_links **queue, t_links *list, t_graph *room, int back)
-{
-	int 			iadjactent;
-
-	while (list)
-	{
-		iadjactent = list->room->index;
-		if (list->room->index == back)
-		{
-			update_info_enqueue(queue, list, room);
-			list->room->back = false;
-		}
-		list = list->next;
-	}
-}
-
-int		node_used_in_path(t_lemin *lemin, t_graph *adjacent)
-{
-	int i;
-	int iadjacent;
-	int back = 0;
-	int used = 0;
+	int				back;
+	int				used;
 
 	i = 0;
+	back = 0;
+	used = 0;
 	iadjacent = adjacent->index;
 	back = check_back_path(lemin, adjacent);
 	while (i < lemin->cnt)
@@ -110,16 +74,16 @@ int		node_used_in_path(t_lemin *lemin, t_graph *adjacent)
 	return (0);
 }
 
-void	enqueue_adjacent(t_lemin *lemin, t_links **queue, t_graph *room)
+void				enqueue_adjacent(t_lemin *lemin, t_links **queue,
+					t_graph *room)
 {
-	t_links 		*list;
+	t_links			*list;
 	int				iroom;
 	int				iadjacent;
 	int				back;
 
 	list = room->links;
 	iroom = room->index;
-
 	if ((room->back == true) && (back = check_back_path(lemin, room)))
 		go_backwards(queue, list, room, back);
 	else
@@ -127,7 +91,9 @@ void	enqueue_adjacent(t_lemin *lemin, t_links **queue, t_graph *room)
 		while (list)
 		{
 			iadjacent = list->room->index;
-			if (list->room->visited == false && lemin->matrix[iroom][iadjacent] == 0 && (!node_used_in_path(lemin, list->room)))
+			if (list->room->visited == false
+			&& lemin->matrix[iroom][iadjacent] == 0
+			&& (!node_used_in_path(lemin, list->room)))
 			{
 				update_info_enqueue(queue, list, room);
 				list->room->back = true;

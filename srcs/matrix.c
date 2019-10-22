@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   matrix.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yabecret <yabecret@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mjouffro <mjouffro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/20 10:58:18 by yabecret          #+#    #+#             */
-/*   Updated: 2019/10/21 17:33:38 by yabecret         ###   ########.fr       */
+/*   Updated: 2019/10/21 19:58:38 by mjouffro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-void	addflow(int **matrix, int x, int y)
+void			addflow(int **matrix, int x, int y)
 {
 	matrix[x][y] += 1;
 }
 
-int		find_no_end_list(t_lemin *lemin)
+int				find_no_end_list(t_lemin *lemin)
 {
 	t_links		*tmp;
 
@@ -36,11 +36,10 @@ int		find_no_end_list(t_lemin *lemin)
 	return (SUCCESS);
 }
 
-
-int		updatematrix(t_lemin *lemin)
+int				updatematrix(t_lemin *lemin)
 {
-	t_links *head;
-	t_links *children;
+	t_links		*head;
+	t_links		*children;
 
 	head = lemin->container->path;
 	if (!find_no_end_list(lemin))
@@ -57,10 +56,10 @@ int		updatematrix(t_lemin *lemin)
 	return (SUCCESS);
 }
 
-int		updatefinalmatrices(t_lemin *lemin)
+int				updatefinalmatrices(t_lemin *lemin)
 {
-	int 		i;
-	int 		j;
+	int			i;
+	int			j;
 
 	i = 0;
 	while (i < lemin->cnt)

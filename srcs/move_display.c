@@ -6,13 +6,13 @@
 /*   By: mjouffro <mjouffro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/26 12:59:58 by mjouffro          #+#    #+#             */
-/*   Updated: 2019/10/21 17:28:31 by yabecret         ###   ########.fr       */
+/*   Updated: 2019/10/21 20:02:41 by mjouffro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-void	move_ants(t_lemin *lemin, t_allpaths *paths)
+void				move_ants(t_lemin *lemin, t_allpaths *paths)
 {
 	t_links			*tmp;
 	unsigned int	tracker;
@@ -35,9 +35,9 @@ void	move_ants(t_lemin *lemin, t_allpaths *paths)
 	}
 }
 
-void	fill_ants(t_lemin *lemin, t_allpaths *paths)
+void				fill_ants(t_lemin *lemin, t_allpaths *paths)
 {
-	t_links 		*tmp;
+	t_links			*tmp;
 
 	tmp = paths->path;
 	tmp = tmp->next;
@@ -49,7 +49,7 @@ void	fill_ants(t_lemin *lemin, t_allpaths *paths)
 	}
 }
 
-int		is_empty(t_allpaths *path)
+int					is_empty(t_allpaths *path)
 {
 	t_links			*tmp;
 
@@ -63,26 +63,9 @@ int		is_empty(t_allpaths *path)
 	return (SUCCESS);
 }
 
-int		display_color_ants(t_links	*tmp, int id, int left)
+int					display_ants(t_lemin *lemin, t_allpaths *paths, int left)
 {
-	while (tmp)
-	{
-		if (tmp->room->antid && left == 0)
-		{
-			ft_printf("\033[1;3%dmL%u{reset}-%s", id, tmp->room->antid, tmp->room->name);
-			left = 1;
-		}
-		else if (tmp->room->antid && left == 1)
-			ft_printf(" \033[1;3%dmL%u{reset}-%s", id, tmp->room->antid, tmp->room->name);
-		tmp = tmp->next;
-	}
-	return (left);
-}
-
-
-int		display_ants(t_lemin *lemin, t_allpaths	*paths, int left)
-{
-	t_links	*tmp;
+	t_links			*tmp;
 
 	tmp = paths->path;
 	if (lemin->state & S_COLOR)
@@ -101,12 +84,12 @@ int		display_ants(t_lemin *lemin, t_allpaths	*paths, int left)
 	return (left);
 }
 
-int		move_and_display(t_lemin *lemin, t_allpaths *path)
+int					move_and_display(t_lemin *lemin, t_allpaths *path)
 {
-	unsigned int 	i;
+	unsigned int	i;
 	int				ret;
-	static int 		left;
-	t_allpaths 		*tmp;
+	static int		left;
+	t_allpaths		*tmp;
 
 	i = 0;
 	left = 0;

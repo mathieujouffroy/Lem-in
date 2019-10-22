@@ -3,37 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   edmond_karp.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yabecret <yabecret@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mjouffro <mjouffro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/25 16:27:12 by yabecret          #+#    #+#             */
-/*   Updated: 2019/10/21 19:21:24 by yabecret         ###   ########.fr       */
+/*   Updated: 2019/10/22 14:07:57 by mjouffro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-t_links		*find_hash_node(t_links *list, unsigned long hash)
-{
-	t_links			*new;
-	t_links			*tmp;
-
-	new = memalloc_links();
-	tmp = list;
-	//new = tmp;
-	while (tmp)
-	{
-		if (tmp->room && tmp->room->hash == hash)
-		{
-			new->room = tmp->room;
-			new->next = NULL;
-			return (new);
-		}
-		tmp = tmp->next;
-	}
-	return (new);
-}
-
-int			backtrack(t_lemin *lemin)
+int					backtrack(t_lemin *lemin)
 {
 	unsigned long	tracker;
 	t_links			*tmp;
@@ -46,6 +25,10 @@ int			backtrack(t_lemin *lemin)
 		if (tracker == 0)
 		{
 			lemin->container->len = cnt - 1;
+			lemin->container->color_id = lemin->c_id;
+			if (lemin->c_id == 8)
+				lemin->c_id = 1;
+			lemin->c_id++;
 			return (SUCCESS);
 		}
 		tmp = find_hash_node(lemin->list, tracker);
@@ -56,9 +39,9 @@ int			backtrack(t_lemin *lemin)
 	return (FAILURE);
 }
 
-void		resetvisited(t_lemin *lemin)
+void				resetvisited(t_lemin *lemin)
 {
-	t_links 		*tmp;
+	t_links			*tmp;
 
 	tmp = lemin->list;
 	while (tmp)
@@ -68,63 +51,27 @@ void		resetvisited(t_lemin *lemin)
 	}
 }
 
-void		delete_extra_node(t_lemin *lemin, t_allpaths *head)
+void				initialize_lemin_for_ek(t_lemin *lemin)
 {
-	t_allpaths	*nodebeforedel;
-	t_allpaths	*del;
-
-	del = head;
-	nodebeforedel =  head;
-	while (del->next != NULL)
-	{
-		nodebeforedel = del;
-		del = del->next;
-	}
-	if (del->len == 0)
-	{
-		nodebeforedel->next = NULL;
-		lemin->nb_pathsbfs > 1 ? lemin->nb_pathsbfs-- : 0;
-		freeallpaths(del);
-	//	ft_memdel((void**)del);
-	}
+	lemin->matrix = memalloc_matrix(lemin->cnt);
+	lemin->container = memalloc_allpaths();
+	lemin->max_steps = INT_MAX;
 }
 
-void		delete_node(t_lemin *lemin, t_allpaths *head)
-{
-	t_allpaths	*nodebeforedel;
-	t_allpaths	*del;
-
-
-	del = head;
-	nodebeforedel =  head;
-	while (del->next != NULL)
-	{
-		nodebeforedel = del;
-		del = del->next;
-	}
-	if (del->len > lemin->max_steps)
-	{
-		nodebeforedel->next = NULL;
-		freeallpaths(del);
-	//	ft_memdel((void**)del);
-	}
-}
-
-int			ek(t_lemin *lemin)
+int					ek(t_lemin *lemin)
 {
 	int				tmp;
 	unsigned int	max;
 	t_allpaths		*tmp1;
 
 	tmp = 1;
-	lemin->matrix = memalloc_matrix(lemin->cnt);
-	lemin->container = memalloc_allpaths();
+	initialize_lemin_for_ek(lemin);
 	tmp1 = lemin->container;
-	lemin->max_steps = INT_MAX;
 	while (bfs(lemin) != 0 && tmp && (lemin->state & S_END))
 	{
+		max = 0;
 		backtrack(lemin);
-		tmp = nbr_steps(lemin, tmp1, max = 0);
+		tmp = nbr_steps(lemin, tmp1, max);
 		if (tmp == -1)
 			return (FAILURE);
 		tmp ? lemin->max_steps = tmp : lemin->max_steps;
@@ -135,7 +82,7 @@ int			ek(t_lemin *lemin)
 	lemin->container = tmp1;
 	if (lemin->container->path == NULL)
 		return (FAILURE);
-	delete_node(lemin, lemin->container);
+	delete_path_too_big(lemin, lemin->container);
 	delete_extra_node(lemin, lemin->container);
 	return (SUCCESS);
 }
