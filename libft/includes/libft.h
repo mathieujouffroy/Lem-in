@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: MathieuJouffroy <MathieuJouffroy@studen    +#+  +:+       +#+        */
+/*   By: yabecret <yabecret@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 16:20:26 by yabecret          #+#    #+#             */
-/*   Updated: 2019/05/24 16:17:30 by MathieuJouf      ###   ########.fr       */
+/*   Updated: 2019/10/22 17:09:06 by yabecret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
