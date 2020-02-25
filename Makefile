@@ -6,7 +6,7 @@
 #    By: mjouffro <mjouffro@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/08 09:48:30 by yabecret          #+#    #+#              #
-#    Updated: 2019/10/22 15:00:20 by mjouffro         ###   ########.fr        #
+#    Updated: 2019/10/23 12:10:51 by yabecret         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ NAME	=	lem-in
 # Compilation
 CC			=	@cc -g #-fsanitize=address
 CFLAGS		=	-O3 -Wall -Wextra -Werror
-CPPFLAGS	=	-Iincludes
+LIBFLAGS	=	-Iincludes
 
 # Files && Objs
 
@@ -101,11 +101,11 @@ $(OBJ_PATH)		:
 
 $(NAME)			:	$(OBJ)
 					@make -C $(LIB)
-					@$(CC) $(CFLAGS) $(CPPFLAGS) -g -o $@ $^ $(LIB)libft.a
+					@$(CC) $(CFLAGS) $(LIBFLAGS) -g -o $@ $^ $(LIB)libft.a
 					@echo "make $(NAME)$(LOG_GREEN) ✓ $(LOG_NOCOLOR)"
 
 $(OBJ_PATH)/%.o:	$(SRC_PATH)/%.c
-					$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
+					$(CC) $(CFLAGS) $(LIBFLAGS) -c $< -o $@
 
 # Clean rules
 clean			:
