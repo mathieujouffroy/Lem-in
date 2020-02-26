@@ -34,7 +34,7 @@ git clone https://github.com/MathieuJouffroy/Lem-in.git && cd Lem-in && make
 #### Map example
 ![Lem-in](images/map.png)
 
-It's graphical representation
+It's graphical representation<br>
 ![Lem-in](images/graph.png)
 
 Comments "##start" and '##end' indicates the sink and source node respectively.
