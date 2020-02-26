@@ -21,8 +21,8 @@ Output:
 The constraints:
 
 - An ant can only move once per turn.
-- A vertex can only contain one ant (except the source and the sink).
-- The program must take less than 3 seconds. Therefore the algorithm has to<br>
+- A room (vertex) can only contain one ant (except the source and the sink).
+- The program must take less than 2 seconds. Therefore the algorithm has to<br>
 avoid trafic jam and overlapping.
 
 ## Usage
@@ -40,6 +40,6 @@ It's graphical representation<br>
 Comments "##start" and '##end' indicates the sink and source node respectively.
 They must be linked together (graph traversal).
 
-## Example
+## Example (1000 rooms/vertices)
 ![Lem-in](images/example.png)
 
