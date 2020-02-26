@@ -32,11 +32,13 @@ git clone https://github.com/MathieuJouffroy/Lem-in.git && cd Lem-in && make
 ./lem-in < maps/[map_name]
 
 #### Map example
+![Lem-in](images/map.png)
 
 Comments "##start" and '##end' indicates the sink and source node respectively.
 They must be linked together (graph traversal).
 
 ## Example
+![Lem-in](images/graph.png)
 
 
 
