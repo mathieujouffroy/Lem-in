@@ -40,6 +40,7 @@ It's graphical representation<br>
 Comments "##start" and '##end' indicates the sink and source node respectively.
 They must be linked together (graph traversal).
 
-## Example (1000 rooms/vertices)
+## Example 
+#### 1000 rooms (vertices)
 ![Lem-in](images/example.png)
 
