@@ -34,11 +34,12 @@ git clone https://github.com/MathieuJouffroy/Lem-in.git && cd Lem-in && make
 #### Map example
 ![Lem-in](images/map.png)
 
+It's graphical representation
+![Lem-in](images/graph.png)
+
 Comments "##start" and '##end' indicates the sink and source node respectively.
 They must be linked together (graph traversal).
 
 ## Example
-![Lem-in](images/graph.png)
-
-
+![Lem-in](images/example.png)
 
