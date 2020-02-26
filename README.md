@@ -45,7 +45,7 @@ They must be linked together (graph traversal).
 ./lem-in < maps/1000.map -s -c<br>
 ![Lem-in](images/example.png)
 
-- s option will indicate the number of steps required to move all the ants from the<br>
+- -s option will indicate the number of steps required to move all the ants from the<br>
 source to the sink
-- c option adds color to differenciate the paths
+- -c option adds color to differenciate the paths
 
