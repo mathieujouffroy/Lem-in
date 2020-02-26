@@ -43,6 +43,7 @@ They must be linked together (graph traversal).
 ## Example 
 #### 1000 rooms (vertices)
 ./lem-in < maps/1000.map -s -c<br>
+
 ![Lem-in](images/example.png)
 
 - -s option will indicate the number of steps required to move all the ants from the<br>
