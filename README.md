@@ -5,8 +5,8 @@ Lem-in is an algorithmic project that relies on graph theory. The aim is to
 find the shortest and quickest solution for a number of ants to traverse an 
 ant colony (the graph) from the source node to the sink node in the least 
 amount of steps.
-We will need to find the shortest paths or paths to achieve this.
-For this project, I used an adaptation of the Edmund-Karp algorithm 
+To achieve this we will need to find the maximum flow through the shortest path or paths.
+For this project, I used an adaptation of the Edmonds-Karp algorithm 
 (based on the Ford-Fulkerson algorithm).
 
 Input:
