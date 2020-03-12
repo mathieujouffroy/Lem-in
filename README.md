@@ -5,7 +5,7 @@ Lem-in is an algorithmic project that relies on graph theory. The aim is to
 find the shortest and quickest solution for a number of ants to traverse an 
 ant colony (the graph) from the source node to the sink node in the least 
 amount of steps.
-To achieve this we will need to find the maximum flow through the shortest path or paths.
+To achieve this we will need to find the maximum flow and the shortest path or paths.
 For this project, I used an adaptation of the Edmonds-Karp algorithm 
 (based on the Ford-Fulkerson algorithm).
 
@@ -45,6 +45,11 @@ They must be linked together (graph traversal).
 ./lem-in < maps/1000.map -s -c<br>
 
 ![Lem-in](images/example.png)
+[L[ant number]-[current vertex]]
+
+Each line of the output corresponds to a step:
+
+The first entry of the first line is [L1-Ve_6] : the first ant goes to room "Ve_6", the second is [L2-Bkb8] : the second ant goes to room "Bkb8" and so on ...
 
 - -s option will indicate the number of steps required to move all the ants from the<br>
 source to the sink
